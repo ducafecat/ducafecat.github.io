@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发 | 
+        
+        东西
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",graphql eggjs">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="东西">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/05/02/08-graphql-eggjs-server/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="东西">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2018/05/02/08-graphql-eggjs-server/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发 | 东西">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="graphql eggjs"> 
+
+    
+        <meta property="article:published_time" content="Wed May 02 2018 17:13:41 GMT+0800">
+        <meta property="article:modified_time" content="Mon May 07 2018 11:15:39 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/05/02/08-graphql-eggjs-server/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/05/02/08-graphql-eggjs-server/index.html",
+    "headline": "GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发",
+    "datePublished": "Wed May 02 2018 17:13:41 GMT+0800",
+    "dateModified": "Mon May 07 2018 11:15:39 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "会煮咖啡的猫",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "东西",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",graphql eggjs",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#GraphQL-渐进学习-08-graphql-采用eggjs-服务端开发"><span class="post-toc-number">1.</span> <span class="post-toc-text">GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#软件环境"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">软件环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#步骤"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-使用-egg-graphql"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">1 使用 egg-graphql</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-egg-graphql-代码结构"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">2 egg-graphql 代码结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-编写-common-全局类型"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">3 编写 common 全局类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-编写-user-业务"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">4 编写 user 业务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-编写-query-查询"><span class="post-toc-number">1.4.5.</span> <span class="post-toc-text">5 编写 query 查询</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-编写-mutation-更新"><span class="post-toc-number">1.4.6.</span> <span class="post-toc-text">6 编写 mutation 更新</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-开启-cros-跨域访问"><span class="post-toc-number">1.4.7.</span> <span class="post-toc-text">7 开启 cros 跨域访问</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-编写数据服务-jwt-授权"><span class="post-toc-number">1.4.8.</span> <span class="post-toc-text">8 编写数据服务 jwt 授权</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-token-验证中间件"><span class="post-toc-number">1.4.9.</span> <span class="post-toc-text">9 token 验证中间件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">参考</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-文章"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">1 文章</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-组件"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">2 组件</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://oflimcy5e.bkt.clouddn.com/graphql-quick-start-thumbnail.png?imageView2/2/w/800)">
+    
+            <p class="article-headline-p">
+                GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>会煮咖啡的猫</strong>
+        <span>5月 02, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/graphql-eggjs/">graphql eggjs</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发&url=http://yoursite.com/2018/05/02/08-graphql-eggjs-server/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发&url=http://yoursite.com/2018/05/02/08-graphql-eggjs-server/index.html&via=会煮咖啡的猫" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/02/08-graphql-eggjs-server/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/02/08-graphql-eggjs-server/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="GraphQL-渐进学习-08-graphql-采用eggjs-服务端开发"><a href="#GraphQL-渐进学习-08-graphql-采用eggjs-服务端开发" class="headerlink" title="GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发"></a>GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发</h1><h2 id="软件环境"><a href="#软件环境" class="headerlink" title="软件环境"></a>软件环境</h2><ul>
+<li>eggjs 2.2.1</li>
+</ul>
+<blockquote>
+<p>请注意当前的环境，老版本的 <code>egg</code> 可能配置有差异</p>
+</blockquote>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>创建 graphql 服务</li>
+<li>用户登录授权</li>
+<li>用户访问鉴权</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li><a href="https://github.com/ducafecat/eggjs-graphql-vue-example/tree/master/egg-server" target="_blank" rel="noopener">ducafecat/eggjs-graphql-example/egg-server</a></li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1-使用-egg-graphql"><a href="#1-使用-egg-graphql" class="headerlink" title="1 使用 egg-graphql"></a>1 使用 <code>egg-graphql</code></h3><ul>
+<li>安装包</li>
+</ul>
+<pre><code class="bash">npm i --save egg-graphql
+</code></pre>
+<ul>
+<li>开启插件 <code>/config/plugin.js</code></li>
+</ul>
+<pre><code class="js">exports.graphql = {
+  enable: true,
+  package: &#39;egg-graphql&#39;
+}
+</code></pre>
+<ul>
+<li>配置插件 <code>/config/config.default.js</code></li>
+</ul>
+<pre><code class="js">// add your config here
+config.middleware = [&#39;graphql&#39;]
+
+// graphql
+config.graphql = {
+  router: &#39;/graphql&#39;,
+  // 是否加载到 app 上，默认开启
+  app: true,
+  // 是否加载到 agent 上，默认关闭
+  agent: false,
+  // 是否加载开发者工具 graphiql, 默认开启。路由同 router 字段。使用浏览器打开该可见。
+  graphiql: true,
+  // graphQL 路由前的拦截器
+  onPreGraphQL: function* (ctx) {},
+  // 开发工具 graphiQL 路由前的拦截器，建议用于做权限操作(如只提供开发者使用)
+  onPreGraphiQL: function* (ctx) {},
+}
+</code></pre>
+<h3 id="2-egg-graphql-代码结构"><a href="#2-egg-graphql-代码结构" class="headerlink" title="2 egg-graphql 代码结构"></a>2 <code>egg-graphql</code> 代码结构</h3><pre><code class="bash">.
+├── graphql                       | graphql 代码
+│   ├── common                    | 通用类型定义
+│   │   ├── resolver.js           | 合并所有全局类型定义
+│   │   ├── scalars               | 自定义类型定义
+│   │   │   └── date.js           | 日期类型实现
+│   │   └── schema.graphql        | schema 定义
+│   ├── mutation                  | 所有的更新
+│   │   └── schema.graphql        | schema 定义
+│   ├── query                     | 所有的查询
+│   │   └── schema.graphql        | schema 定义
+│   └── user                      | 用户业务
+│       ├── connector.js          | 连接数据服务
+│       ├── resolver.js           | 类型实现
+│       └── schema.graphql        | schema 定义
+</code></pre>
+<ul>
+<li>graphql 目录下，有 <strong>4</strong> 种代码<ul>
+<li>1 <code>common</code> 全局类型定义</li>
+<li>2 <code>query</code> 查询代码</li>
+<li>3 <code>mutation</code> 更新操作代码</li>
+<li>4 <code>业务</code> 实现代码<ul>
+<li>4.1 <code>connector</code> 连接数据服务</li>
+<li>4.2 <code>resolver</code> 类型实现</li>
+<li>4.3 <code>schema</code> 定义</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-编写-common-全局类型"><a href="#3-编写-common-全局类型" class="headerlink" title="3 编写 common 全局类型"></a>3 编写 <code>common</code> 全局类型</h3><ul>
+<li>1 <code>common/schema.graphql</code></li>
+</ul>
+<pre><code class="js">scalar Date
+</code></pre>
+<ul>
+<li>2 <code>common/scalars/date.js</code></li>
+</ul>
+<pre><code class="js">const { GraphQLScalarType } = require(&#39;graphql&#39;);
+const { Kind } = require(&#39;graphql/language&#39;);
+
+module.exports = new GraphQLScalarType({
+  name: &#39;Date&#39;,
+  description: &#39;Date custom scalar type&#39;,
+  parseValue(value) {
+    return new Date(value);
+  },
+  serialize(value) {
+    return value.getTime();
+  },
+  parseLiteral(ast) {
+    if (ast.kind === Kind.INT) {
+      return parseInt(ast.value, 10);
+    }
+    return null;
+  },
+});
+</code></pre>
+<ul>
+<li>3 <code>common/resolver.js</code></li>
+</ul>
+<pre><code class="js">module.exports = {
+  Date: require(&#39;./scalars/date&#39;), // eslint-disable-line
+};
+</code></pre>
+<blockquote>
+<p>在 <code>egg node</code> 下还是用 <code>require</code> ，如果语言偏好用 <code>import</code> 会损失转换性能，不推荐</p>
+</blockquote>
+<h3 id="4-编写-user-业务"><a href="#4-编写-user-业务" class="headerlink" title="4 编写 user 业务"></a>4 编写 <code>user</code> 业务</h3><ul>
+<li><code>user/schema.graphql</code></li>
+</ul>
+<pre><code class="js"># 用户
+type User {
+  # 流水号
+  id: ID!
+  # 用户名
+  name: String!
+  # token
+  token: String
+}
+</code></pre>
+<ul>
+<li><code>user/connector.js</code></li>
+</ul>
+<pre><code class="js">&#39;use strict&#39;
+
+const DataLoader = require(&#39;dataloader&#39;)
+
+class UserConnector {
+  constructor(ctx) {
+    this.ctx = ctx
+    this.loader = new DataLoader(this.fetch.bind(this))
+  }
+
+  fetch(id) {
+    const user = this.ctx.service.user
+    return new Promise(function(resolve, reject) {
+      const users = user.findById(id)
+      resolve(users)
+    })
+  }
+
+  fetchById(id) {
+    return this.loader.load(id)
+  }
+
+  // 用户登录
+  fetchByNamePassword(username, password) {
+    let user = this.ctx.service.user.findByUsernamePassword(username, password)
+    return user
+  }
+
+  // 用户列表
+  fetchAll() {
+    let user = this.ctx.service.user.findAll()
+    return user
+  }
+
+  // 用户删除
+  removeOne(id) {
+    let user = this.ctx.service.user.removeUser(id)
+    return user
+  }
+
+}
+
+module.exports = UserConnector
+</code></pre>
+<blockquote>
+<p><code>dataloader</code> 是 <code>facebook</code> 出品的数据请求缓存 解决 <code>N+1</code> 问题</p>
+</blockquote>
+<ul>
+<li><code>user/resolver.js</code></li>
+</ul>
+<pre><code class="js">&#39;use strict&#39;
+
+module.exports = {
+  Query: {
+    user(root, {username, password}, ctx) {
+      return ctx.connector.user.fetchByNamePassword(username, password)
+    },
+    users(root, {}, ctx) {
+      return ctx.connector.user.fetchAll()
+    }
+  },
+  Mutation: {
+    removeUser(root, { id }, ctx) {
+      return ctx.connector.user.removeOne(id)
+    },
+  }
+}
+</code></pre>
+<h3 id="5-编写-query-查询"><a href="#5-编写-query-查询" class="headerlink" title="5 编写 query 查询"></a>5 编写 <code>query</code> 查询</h3><ul>
+<li><code>query/schema.graphql</code></li>
+</ul>
+<pre><code class="js">type Query {
+  # 用户登录
+  user(
+    # 用户名
+    username: String!,
+    # 密码
+    password: String!
+    ): User
+  # 用户列表
+  users: [User!]
+}
+</code></pre>
+<h3 id="6-编写-mutation-更新"><a href="#6-编写-mutation-更新" class="headerlink" title="6 编写 mutation 更新"></a>6 编写 <code>mutation</code> 更新</h3><ul>
+<li><code>mutation/schema.graphql</code></li>
+</ul>
+<pre><code class="js">type Mutation {
+
+  # User
+  # 删除用户
+  removeUser (
+    # 用户ID
+    id: ID!): User
+}
+
+</code></pre>
+<h3 id="7-开启-cros-跨域访问"><a href="#7-开启-cros-跨域访问" class="headerlink" title="7 开启 cros 跨域访问"></a>7 开启 <code>cros</code> 跨域访问</h3><ul>
+<li><code>config/plugin.js</code></li>
+</ul>
+<pre><code class="js">exports.cors = {
+  enable: true,
+  package: &#39;egg-cors&#39;
+}
+</code></pre>
+<ul>
+<li><code>config/config.default.js</code></li>
+</ul>
+<pre><code class="js">// cors
+config.cors = {
+  origin: &#39;*&#39;,
+  allowMethods: &#39;GET,HEAD,PUT,POST,DELETE,PATCH&#39;
+}
+// csrf
+config.security = {
+  csrf: {
+    ignore: () =&gt; true
+  }
+}
+</code></pre>
+<blockquote>
+<p>作为 <code>API</code> 服务，顺手把 <code>csrf</code> 关掉</p>
+</blockquote>
+<h3 id="8-编写数据服务-jwt-授权"><a href="#8-编写数据服务-jwt-授权" class="headerlink" title="8 编写数据服务 jwt 授权"></a>8 编写数据服务 <code>jwt</code> 授权</h3><ul>
+<li>配置 <code>config/config.default.js</code></li>
+</ul>
+<pre><code class="js">// easy-mock 模拟数据地址
+config.baseURL =
+  &#39;https://www.easy-mock.com/mock/59801fd8a1d30433d84f198c/example&#39;
+
+// jwt
+config.jwt = {
+  jwtSecret: &#39;shared-secret&#39;,
+  jwtExpire: &#39;14 days&#39;,
+  WhiteList: [&#39;UserLogin&#39;]
+}
+</code></pre>
+<ul>
+<li>数据请求封装 <code>util/request.js</code></li>
+</ul>
+<pre><code class="js">&#39;use strict&#39;
+
+const _options = {
+  dataType: &#39;json&#39;,
+  timeout: 30000
+}
+
+module.exports = {
+
+  createAPI: (_this, url, method, data) =&gt; {
+    let options = {
+      ..._options,
+      method,
+      data
+    }
+    return _this.ctx.curl(
+      `${_this.config.baseURL}${url}`,
+      options
+    )
+  }
+}
+</code></pre>
+<ul>
+<li>用户数据服务 <code>service/user.js</code></li>
+</ul>
+<pre><code class="js">const Service = require(&#39;egg&#39;).Service
+const {createAPI} = require(&#39;../util/request&#39;)
+const jwt = require(&#39;jsonwebtoken&#39;)
+
+class UserService extends Service {
+
+  // 用户详情
+  async findById(id) {
+    const result = await createAPI(this, &#39;/user&#39;, &#39;get&#39;, {
+      id
+    })
+    return result.data
+  }
+
+  // 用户列表
+  async findAll() {
+    const result = await createAPI(this, &#39;/user/all&#39;, &#39;get&#39;, {})
+    return result.data
+  }
+
+  // 用户登录、jwt token
+  async findByUsernamePassword(username, password) {
+    const result = await createAPI(this, &#39;/user/login&#39;, &#39;post&#39;, {
+      username,
+      password
+    })
+    let user = result.data
+    user.token = jwt.sign({uid: user.id}, this.config.jwt.jwtSecret, {
+      expiresIn: this.config.jwt.jwtExpire
+    })
+    return user
+  }
+
+  // 用户删除
+  async removeUser(id) {
+    const result = await createAPI(this, &#39;/user&#39;, &#39;delete&#39;, {
+      id
+    })
+    return result.data
+  }
+}
+
+module.exports = UserService
+</code></pre>
+<h3 id="9-token-验证中间件"><a href="#9-token-验证中间件" class="headerlink" title="9 token 验证中间件"></a>9 <code>token</code> 验证中间件</h3><ul>
+<li>配置  <code>config/config.default.js</code></li>
+</ul>
+<pre><code class="js">config.middleware = [&#39;auth&#39;, &#39;graphql&#39;]
+
+config.bodyParser = {
+  enable: true,
+  jsonLimit: &#39;10mb&#39;
+}
+</code></pre>
+<blockquote>
+<p>开启内置 <code>bodyParser</code> 服务</p>
+</blockquote>
+<ul>
+<li>编写 <code>middleware/auth.js</code></li>
+</ul>
+<pre><code class="js">const jwt = require(&#39;jsonwebtoken&#39;)
+
+module.exports = options =&gt; {
+  return async function auth(ctx, next) {
+    // 开启 GraphiQL IDE 调试时，所有的请求放过
+    if (ctx.app.config.graphql.graphiql) {
+      await next()
+      return
+    }
+    const body = ctx.request.body
+    if (body.operationName !== &#39;UserLogin&#39;) {
+      let token = ctx.request.header[&#39;authorization&#39;]
+      if (token === undefined) {
+        ctx.body = {message: &#39;令牌为空，请登陆获取！&#39;}
+        ctx.status = 401
+        return
+      }
+      token = token.replace(/^Bearer\s/, &#39;&#39;)
+      try {
+        let decoded = jwt.verify(token, ctx.app.config.jwt.jwtSecret, {
+          expiresIn: ctx.app.config.jwt.jwtExpire
+        })
+        await next()
+      } catch (err) {
+        ctx.body = {message: &#39;访问令牌鉴权无效，请重新登陆获取！&#39;}
+        ctx.status = 401
+      }
+    } else {
+      await next()
+    }
+  }
+}
+</code></pre>
+<blockquote>
+<p>如果开启 <code>GraphiQL IDE</code> 工具，<code>token</code> 验证将失效，令牌数据是写在 <code>request.header[authorization]</code>，这个调试 <code>IDE</code> 不支持设置 <code>header</code></p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><h3 id="1-文章"><a href="#1-文章" class="headerlink" title="1 文章"></a>1 文章</h3><ul>
+<li><a href="https://github.com/koajs/koa" target="_blank" rel="noopener">Koa2 手册</a></li>
+<li><a href="https://eggjs.org/zh-cn/" target="_blank" rel="noopener">eggjs 手册</a></li>
+<li><a href="https://graphql.org/graphql-js/authentication-and-express-middleware/" target="_blank" rel="noopener">graphql-js/Authentication and Express Middleware</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/30604868" target="_blank" rel="noopener">Egg/GraphQL</a></li>
+<li><a href="http://facebook.github.io/graphql/October2016/" target="_blank" rel="noopener">facebook/GraphQL</a></li>
+<li><a href="https://www.apollographql.com/" target="_blank" rel="noopener">apollo-graphql</a></li>
+<li><a href="https://developer.github.com/v4/" target="_blank" rel="noopener">GraphQL API v4</a></li>
+<li><a href="https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql" target="_blank" rel="noopener">github/authenticating-with-graphql</a></li>
+</ul>
+<h3 id="2-组件"><a href="#2-组件" class="headerlink" title="2 组件"></a>2 组件</h3><ul>
+<li><a href="https://github.com/eggjs/egg-graphql" target="_blank" rel="noopener">eggjs/egg-graphql</a></li>
+<li><a href="https://github.com/eggjs/egg-cors" target="_blank" rel="noopener">eggjs/egg-cors</a></li>
+<li><a href="https://github.com/facebook/dataloader" target="_blank" rel="noopener">facebook/dataloader</a></li>
+<li><a href="https://github.com/koajs/cors" target="_blank" rel="noopener">koajs/cors</a></li>
+<li><a href="https://github.com/Akryum/vue-apollo" target="_blank" rel="noopener">vue-apollo</a></li>
+<li><a href="https://www.npmjs.com/package/apollo-client" target="_blank" rel="noopener">apollo-client</a></li>
+<li><a href="https://github.com/auth0/node-jsonwebtoken" target="_blank" rel="noopener">jsonwebtoken</a></li>
+<li><a href="https://github.com/Akryum/vue-apollo/issues/144" target="_blank" rel="noopener">ApolloLink Set headers</a></li>
+<li><a href="https://github.com/ElemeFE/element" target="_blank" rel="noopener">element-ui</a></li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/05/07/09-graphql-apollo-client-vue/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/04/28/07-graphql-modularizing-the-schema/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="会煮咖啡的猫's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        youremail@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">8</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/GraphQL-渐进学习/">GraphQL 渐进学习<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/node/">node<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>东西
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

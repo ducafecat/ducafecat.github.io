@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            GraphQL 渐进学习 07-graphql-node-server-模块化 | 
+        
+        东西
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",graphql">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="东西">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/04/28/07-graphql-modularizing-the-schema/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="东西">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2018/04/28/07-graphql-modularizing-the-schema/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="GraphQL 渐进学习 07-graphql-node-server-模块化 | 东西">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="graphql"> 
+
+    
+        <meta property="article:published_time" content="Sat Apr 28 2018 14:11:48 GMT+0800">
+        <meta property="article:modified_time" content="Sat Apr 28 2018 15:40:35 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/04/28/07-graphql-modularizing-the-schema/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/04/28/07-graphql-modularizing-the-schema/index.html",
+    "headline": "GraphQL 渐进学习 07-graphql-node-server-模块化",
+    "datePublished": "Sat Apr 28 2018 14:11:48 GMT+0800",
+    "dateModified": "Sat Apr 28 2018 15:40:35 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "会煮咖啡的猫",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "东西",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",graphql",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#GraphQL-渐进学习-07-graphql-node-server-模块化"><span class="post-toc-number">1.</span> <span class="post-toc-text">GraphQL 渐进学习 07-graphql-node-server-模块化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录结构"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">目录结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#步骤"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-schema-定义采用文件扩展名-graphql"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">1. schema 定义采用文件扩展名 .graphql</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-安装-VSCode-语法支持插件-GraphQL-for-VSCode"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">2. 安装 VSCode 语法支持插件 GraphQL for VSCode</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-安装-npm-插件-require-graphql-file-支持模块化-graphql-文件"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">3. 安装 npm 插件 require-graphql-file 支持模块化 .graphql 文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-编写-schema-定义"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">4. 编写 schema 定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-编写-分解器-代码"><span class="post-toc-number">1.4.5.</span> <span class="post-toc-text">5. 编写 分解器 代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-工具-mock"><span class="post-toc-number">1.4.6.</span> <span class="post-toc-text">6. 工具 mock</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">测试</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">参考</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://oflimcy5e.bkt.clouddn.com/graphql-quick-start-thumbnail.png?imageView2/2/w/800)">
+    
+            <p class="article-headline-p">
+                GraphQL 渐进学习 07-graphql-node-server-模块化
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>会煮咖啡的猫</strong>
+        <span>4月 28, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/graphql/">graphql</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=GraphQL 渐进学习 07-graphql-node-server-模块化&url=http://yoursite.com/2018/04/28/07-graphql-modularizing-the-schema/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=GraphQL 渐进学习 07-graphql-node-server-模块化&url=http://yoursite.com/2018/04/28/07-graphql-modularizing-the-schema/index.html&via=会煮咖啡的猫" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/04/28/07-graphql-modularizing-the-schema/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/04/28/07-graphql-modularizing-the-schema/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="GraphQL-渐进学习-07-graphql-node-server-模块化"><a href="#GraphQL-渐进学习-07-graphql-node-server-模块化" class="headerlink" title="GraphQL 渐进学习 07-graphql-node-server-模块化"></a>GraphQL 渐进学习 07-graphql-node-server-模块化</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>为了便于维护，模块化 <code>node 服务端</code> 代码</li>
+<li>代码抽取层次分为<ul>
+<li><code>schema</code> 定义<ul>
+<li><code>类型</code></li>
+<li><code>业务对象</code></li>
+<li><code>查询</code></li>
+<li><code>更改</code></li>
+</ul>
+</li>
+<li><code>resolvers</code> 实现<ul>
+<li><code>查询</code></li>
+<li><code>方法</code></li>
+</ul>
+</li>
+<li><code>typeResolvers</code> 实现<ul>
+<li><code>自定义类型</code></li>
+<li><code>标准类型</code></li>
+</ul>
+</li>
+<li><code>utils</code> 工具<ul>
+<li><code>mock</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li><a href="https://github.com/ducafecat/graphQL-example/tree/master/src/modular" target="_blank" rel="noopener">graphQL-example/modular/</a></li>
+</ul>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><pre><code class="bash">.
+├── index.js                                | 主程序
+├── resolvers                               | 查询 更新 实现
+│   ├── Mutations.js                        | 更新
+│   ├── Querys.js                           | 查询
+│   └── index.js                            | 入口
+├── schema                                  | 模型定义
+│   ├── business                            | 业务定义
+│   │   ├── comment.graphql                 | 评论
+│   │   └── post.graphql                    | 文章
+│   └── std                                 | 类型定义
+│       ├── Mutation.graphql                | 更新
+│       ├── Query.graphql                   | 查询
+│       ├── enum.graphql                    | 枚举
+│       ├── interface.graphql               | 接口
+│       ├── scalar.graphql                  | 自定义类型
+│       └── union.graphql                   | 联合
+├── typeResolvers                           | 类型实现
+│   ├── index.js                            | 入口
+│   ├── interfaces.js                       | 接口
+│   ├── scalars.js                          | 自定义类型
+│   ├── types.js                            | 业务类型
+│   └── unions.js                           | 联合
+└── utils                                   | 工具
+    └── mock.js                             | 模拟
+</code></pre>
+<ul>
+<li>说明<ul>
+<li>这是按 <code>Graphql</code> 组件层次来切分的，适合小业务项目</li>
+<li>如果是业务系统庞大，就需要外面套一层 <code>子业务模块</code> 的目录</li>
+<li>如果业务很微小，可以把目录下的多个文件合成一个，切的过于细小也带来维护的麻烦，具体尺度自己感觉哈</li>
+</ul>
+</li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1-schema-定义采用文件扩展名-graphql"><a href="#1-schema-定义采用文件扩展名-graphql" class="headerlink" title="1. schema 定义采用文件扩展名 .graphql"></a>1. <code>schema</code> 定义采用文件扩展名 <code>.graphql</code></h3><p>规范点总有好处的，你可以写成 <code>.gpl</code> 或者 <strong><code>.graphql</code></strong></p>
+<h3 id="2-安装-VSCode-语法支持插件-GraphQL-for-VSCode"><a href="#2-安装-VSCode-语法支持插件-GraphQL-for-VSCode" class="headerlink" title="2. 安装 VSCode 语法支持插件 GraphQL for VSCode"></a>2. 安装 <code>VSCode</code> 语法支持插件 <code>GraphQL for VSCode</code></h3><ul>
+<li><p>安装地址 <a href="https://marketplace.visualstudio.com/items?itemName=kumar-harsh.graphql-for-vscode" target="_blank" rel="noopener">GraphQL for VSCode</a></p>
+</li>
+<li><p>语法高亮<br><img src="https://cdn.rawgit.com/kumarharsh/graphql-for-vscode/master/images/preview.png" alt="语法高亮"></p>
+</li>
+<li><p>前去定义<br><img src="https://cdn.rawgit.com/kumarharsh/graphql-for-vscode/master/images/goto-definition.gif" alt="goto-definition"></p>
+</li>
+<li><p>自动完成代码<br><img src="https://cdn.rawgit.com/kumarharsh/graphql-for-vscode/master/images/autocomplete.gif" alt="autocomplete"></p>
+</li>
+</ul>
+<blockquote>
+<p>我主要用语法高亮</p>
+</blockquote>
+<h3 id="3-安装-npm-插件-require-graphql-file-支持模块化-graphql-文件"><a href="#3-安装-npm-插件-require-graphql-file-支持模块化-graphql-文件" class="headerlink" title="3. 安装 npm 插件 require-graphql-file 支持模块化 .graphql 文件"></a>3. 安装 npm 插件 <code>require-graphql-file</code> 支持模块化 <code>.graphql</code> 文件</h3><ul>
+<li>安装插件</li>
+</ul>
+<pre><code class="bash">npm i -S require-graphql-file
+</code></pre>
+<ul>
+<li>使用，打开 <code>index.js</code></li>
+</ul>
+<pre><code class="js">import requireGraphQLFile from &#39;require-graphql-file&#39;
+...
+// 读取 schema
+const typeDefs = [
+  requireGraphQLFile(&#39;./schema/std/scalar&#39;),
+  // requireGraphQLFile(&#39;./schema/std/enum&#39;),
+  // requireGraphQLFile(&#39;./schema/std/interface&#39;),
+  // requireGraphQLFile(&#39;./schema/std/union&#39;),
+  requireGraphQLFile(&#39;./schema/business/post&#39;),
+  requireGraphQLFile(&#39;./schema/business/comment&#39;),
+  requireGraphQLFile(&#39;./schema/std/Query&#39;),
+  requireGraphQLFile(&#39;./schema/std/Mutation&#39;)
+]
+...
+// 合并 schema
+const schema = makeExecutableSchema({
+  typeDefs,
+  ...
+})
+</code></pre>
+<blockquote>
+<p>其实就是读取 <code>文本</code> 文件，然后合并了传参给 <code>makeExecutableSchema</code></p>
+</blockquote>
+<h3 id="4-编写-schema-定义"><a href="#4-编写-schema-定义" class="headerlink" title="4. 编写 schema 定义"></a>4. 编写 <code>schema</code> 定义</h3><ul>
+<li><p>按 <code>业务类型</code> 和 <code>组件类型</code> 切分</p>
+<ul>
+<li><p>因为 <code>业务类型</code> 的文件名都是有意义的业务名称 <code>Post</code> <code>Comment</code></p>
+</li>
+<li><p>而 <code>组件类型</code> 的名字可以很确定 <code>enum</code> <code>interface</code> <code>union</code> <code>scalar</code> 方便查找</p>
+</li>
+</ul>
+</li>
+<li><p>目录文件</p>
+</li>
+</ul>
+<pre><code class="bash">├── schema                                  | 模型定义
+│   ├── business                            | 业务定义
+│   │   ├── comment.graphql                 | 评论
+│   │   └── post.graphql                    | 文章
+│   └── std                                 | 类型定义
+│       ├── Mutation.graphql                | 更新
+│       ├── Query.graphql                   | 查询
+│       ├── enum.graphql                    | 枚举
+│       ├── interface.graphql               | 接口
+│       ├── scalar.graphql                  | 自定义类型
+│       └── union.graphql                   | 联合
+</code></pre>
+<ul>
+<li><p>代码参考</p>
+<ul>
+<li><a href="https://github.com/ducafecat/graphQL-example/tree/master/src/modular/schema/std" target="_blank" rel="noopener">modular/schema/std/</a></li>
+<li><a href="https://github.com/ducafecat/graphQL-example/tree/master/src/modular/schema/business" target="_blank" rel="noopener">modular/schema/business/</a></li>
+</ul>
+</li>
+<li><p>主程序调用</p>
+</li>
+</ul>
+<p>见上文</p>
+<h3 id="5-编写-分解器-代码"><a href="#5-编写-分解器-代码" class="headerlink" title="5. 编写 分解器 代码"></a>5. 编写 <code>分解器</code> 代码</h3><ul>
+<li><p>我认为 <code>分解器</code> 代码有两种</p>
+<ul>
+<li>1 实现 <code>Query查询</code> <code>Mutations更新</code> , 我都放在 <code>resolvers</code> 目录</li>
+<li>2 定义各种类型 <code>interface</code> <code>scalar</code> <code>type</code> <code>union</code> , 都放在 <code>typeResolvers</code> 目录</li>
+</ul>
+</li>
+<li><p>目录文件</p>
+</li>
+</ul>
+<pre><code class="bash">├── resolvers                               | 查询 更新 实现
+│   ├── Mutations.js                        | 更新
+│   ├── Querys.js                           | 查询
+│   └── index.js                            | 入口
+├── typeResolvers                           | 类型实现
+│   ├── index.js                            | 入口
+│   ├── interfaces.js                       | 接口
+│   ├── scalars.js                          | 自定义类型
+│   ├── types.js                            | 业务类型
+│   └── unions.js                           | 联合
+</code></pre>
+<ul>
+<li><p>代码参考</p>
+<ul>
+<li><a href="https://github.com/ducafecat/graphQL-example/tree/master/src/modular/resolvers" target="_blank" rel="noopener">modular/resolvers/</a></li>
+<li><a href="https://github.com/ducafecat/graphQL-example/tree/master/src/modular/typeResolvers" target="_blank" rel="noopener">modular/typeResolvers/</a></li>
+</ul>
+</li>
+<li><p>主程序调用</p>
+</li>
+</ul>
+<pre><code class="js">import resolvers from &#39;./resolvers&#39;
+import typeResolvers from &#39;./typeResolvers&#39;
+...
+// 合并 schema
+const schema = makeExecutableSchema({
+  typeDefs,
+  resolvers,
+  typeResolvers,
+  resolverValidationOptions: {
+    requireResolversForResolveType: false
+  }
+})
+</code></pre>
+<ul>
+<li><code>resolvers</code> <code>typeResolvers</code> 目录下写了 <code>index.js</code> 进行合并</li>
+</ul>
+<h3 id="6-工具-mock"><a href="#6-工具-mock" class="headerlink" title="6. 工具 mock"></a>6. 工具 <code>mock</code></h3><ul>
+<li>为了测试方便，我都用 <code>mock</code> 数据</li>
+</ul>
+<p>如何模拟请移步 <a href="/2018/04/27/06-graphql-mock-mockjs/">06-graphql-采用-mockjs-mock数据</a></p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><pre><code class="js"># 请求
+{
+  posts {
+    id
+    title
+    content
+    author
+    addtime
+    comments {
+      id
+      message
+      author
+      addtime
+    }
+  }
+}
+
+# 输出
+{
+  &quot;data&quot;: {
+    &quot;posts&quot;: [
+      {
+        &quot;id&quot;: 90932,
+        &quot;title&quot;: &quot;十分长现维整&quot;,
+        &quot;content&quot;: &quot;常气火热成或&quot;,
+        &quot;author&quot;: &quot;文霞&quot;,
+        &quot;addtime&quot;: &quot;10:21:14&quot;,
+        &quot;comments&quot;: [
+          {
+            &quot;id&quot;: 30874,
+            &quot;message&quot;: &quot;十称军题片格员主实&quot;,
+            &quot;author&quot;: &quot;局反重间半何&quot;,
+            &quot;addtime&quot;: &quot;22:05:28&quot;
+          },
+          {
+            &quot;id&quot;: 7088,
+            &quot;message&quot;: &quot;克此快候己林层省&quot;,
+            &quot;author&quot;: &quot;备从当提属&quot;,
+            &quot;addtime&quot;: &quot;15:45:27&quot;
+          },
+          {
+            &quot;id&quot;: 74989,
+            &quot;message&quot;: &quot;部织温制流统响教广&quot;,
+            &quot;author&quot;: &quot;领重你包计&quot;,
+            &quot;addtime&quot;: &quot;03:06:03&quot;
+          },
+          {
+            &quot;id&quot;: 24501,
+            &quot;message&quot;: &quot;识消己满军子酸&quot;,
+            &quot;author&quot;: &quot;调始相内向中取造还比&quot;,
+            &quot;addtime&quot;: &quot;05:15:38&quot;
+          },
+          {
+            &quot;id&quot;: 91765,
+            &quot;message&quot;: &quot;重开流报着色运党快但&quot;,
+            &quot;author&quot;: &quot;儿动内心放改声口立&quot;,
+            &quot;addtime&quot;: &quot;04:53:28&quot;
+          },
+          {
+            &quot;id&quot;: 48731,
+            &quot;message&quot;: &quot;气即感共就林始&quot;,
+            &quot;author&quot;: &quot;进在层只作&quot;,
+            &quot;addtime&quot;: &quot;10:29:44&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 67359,
+        &quot;title&quot;: &quot;开被几此图位便目作&quot;,
+        &quot;content&quot;: &quot;应众级向由把&quot;,
+        &quot;author&quot;: &quot;孟杰&quot;,
+        &quot;addtime&quot;: &quot;16:49:30&quot;,
+        &quot;comments&quot;: [
+          {
+            &quot;id&quot;: 28432,
+            &quot;message&quot;: &quot;大命格我就战历&quot;,
+            &quot;author&quot;: &quot;亲但美在号场米商&quot;,
+            &quot;addtime&quot;: &quot;13:18:11&quot;
+          },
+          {
+            &quot;id&quot;: 36258,
+            &quot;message&quot;: &quot;红条由近的备级&quot;,
+            &quot;author&quot;: &quot;自团人老以音状装指号&quot;,
+            &quot;addtime&quot;: &quot;13:17:17&quot;
+          },
+          {
+            &quot;id&quot;: 90117,
+            &quot;message&quot;: &quot;么整片外习达离&quot;,
+            &quot;author&quot;: &quot;满步该律特&quot;,
+            &quot;addtime&quot;: &quot;16:10:35&quot;
+          },
+          {
+            &quot;id&quot;: 14731,
+            &quot;message&quot;: &quot;场等九百市很安&quot;,
+            &quot;author&quot;: &quot;白石价和林风农&quot;,
+            &quot;addtime&quot;: &quot;18:33:41&quot;
+          },
+          {
+            &quot;id&quot;: 23523,
+            &quot;message&quot;: &quot;二面化权文及照万&quot;,
+            &quot;author&quot;: &quot;运现里新政过铁&quot;,
+            &quot;addtime&quot;: &quot;17:51:59&quot;
+          },
+          {
+            &quot;id&quot;: 77423,
+            &quot;message&quot;: &quot;划群低矿流按看实养&quot;,
+            &quot;author&quot;: &quot;个为然工些效&quot;,
+            &quot;addtime&quot;: &quot;21:56:41&quot;
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><p><a href="https://www.apollographql.com/docs/graphql-tools/generate-schema.html" target="_blank" rel="noopener">graphql-tools/generate-schema</a></p>
+</li>
+<li><p><a href="https://github.com/ducafecat/require-graphql-file" target="_blank" rel="noopener">require-graphql-file</a></p>
+</li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/05/02/08-graphql-eggjs-server/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/04/27/06-graphql-mock-mockjs/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="会煮咖啡的猫's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        youremail@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">8</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/GraphQL-渐进学习/">GraphQL 渐进学习<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/node/">node<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>东西
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
