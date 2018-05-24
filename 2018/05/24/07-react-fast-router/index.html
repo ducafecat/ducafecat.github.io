@@ -43,7 +43,7 @@
     
     <title>
         
-            React 快速上手 - 06 容器组件、展示组件、操作组件 | 
+            React 快速上手 - 07 前端路由 react-router | 
         
         东西
     </title>
@@ -220,7 +220,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="东西">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/05/23/06-react-fast-component/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/05/24/07-react-fast-router/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="东西">
@@ -235,16 +235,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/05/23/06-react-fast-component/">
+    <meta property="og:url" content="http://yoursite.com/2018/05/24/07-react-fast-router/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="React 快速上手 - 06 容器组件、展示组件、操作组件 | 东西">
+    <meta property="og:title" content="React 快速上手 - 07 前端路由 react-router | 东西">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
     <meta property="og:article:tag" content="react"> 
 
     
-        <meta property="article:published_time" content="Wed May 23 2018 11:20:36 GMT+0800">
-        <meta property="article:modified_time" content="Wed May 23 2018 16:06:51 GMT+0800">
+        <meta property="article:published_time" content="Thu May 24 2018 09:49:20 GMT+0800">
+        <meta property="article:modified_time" content="Thu May 24 2018 15:55:05 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -252,7 +252,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/05/23/06-react-fast-component/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/05/24/07-react-fast-router/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -264,10 +264,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/05/23/06-react-fast-component/index.html",
-    "headline": "React 快速上手 - 06 容器组件、展示组件、操作组件",
-    "datePublished": "Wed May 23 2018 11:20:36 GMT+0800",
-    "dateModified": "Wed May 23 2018 16:06:51 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/05/24/07-react-fast-router/index.html",
+    "headline": "React 快速上手 - 07 前端路由 react-router",
+    "datePublished": "Thu May 24 2018 09:49:20 GMT+0800",
+    "dateModified": "Thu May 24 2018 15:55:05 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "会煮咖啡的猫",
@@ -351,7 +351,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#React-快速上手-06-容器组件、展示组件、操作组件"><span class="post-toc-number">1.</span> <span class="post-toc-text">React 快速上手 - 06 容器组件、展示组件、操作组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-组件设计"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">1. 组件设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-按有无-状态管理-可以分为-有状态组件-无状态组件"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">1.1 按有无 状态管理 可以分为 有状态组件 无状态组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-1-1-有状态组件-用-React-Component-形式创建"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">1.1.1 有状态组件, 用 React.Component 形式创建</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-1-2-无状态组件，以函数的方式展现多，在开发中尽量用这种形式"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">1.1.2 无状态组件，以函数的方式展现多，在开发中尽量用这种形式</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-按组件-职能-划分为-容器组件-操作组件-展示组件"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">1.2 按组件 职能 划分为 容器组件 操作组件 展示组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-2-1-容器组件"><span class="post-toc-number">1.2.2.1.</span> <span class="post-toc-text">1.2.1 容器组件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-2-1-操作组件"><span class="post-toc-number">1.2.2.2.</span> <span class="post-toc-text">1.2.1 操作组件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-2-1-展示组件"><span class="post-toc-number">1.2.2.3.</span> <span class="post-toc-text">1.2.1 展示组件</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-组件间通讯"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">2. 组件间通讯</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第一步-编写输入组件"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">第一步: 编写输入组件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第二步-编写列表展示组件"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">第二步: 编写列表展示组件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第三步-容器组件绑定状态、事件"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">第三步: 容器组件绑定状态、事件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-数据双向绑定"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">3. 数据双向绑定</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-第一步：输入组件"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">3.1 第一步：输入组件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-第二步：展示组件"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">3.2 第二步：展示组件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-第三步：容器组件"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">3.3 第三步：容器组件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#建议"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">建议</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考文"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">参考文</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#React-快速上手-07-前端路由-react-router"><span class="post-toc-number">1.</span> <span class="post-toc-text">React 快速上手 - 07 前端路由 react-router</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#0-安装"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">0. 安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-先跑一个简单例子"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">1. 先跑一个简单例子</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-基础使用"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">2. 基础使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-BrowserRouter-还是-HashRouter"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">2.1 BrowserRouter 还是 HashRouter</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-组件-lt-Route-gt-属性-exact-完全匹配"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">2.2 组件 &lt;Route&gt; 属性 exact 完全匹配</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-组件-lt-Route-gt-属性-strict-末尾斜杠的匹配"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">2.3 组件 &lt;Route&gt; 属性 strict 末尾斜杠的匹配</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-组件-lt-Link-gt"><span class="post-toc-number">1.5.4.</span> <span class="post-toc-text">2.4 组件 &lt;Link&gt;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-6-组件-lt-Switch-gt"><span class="post-toc-number">1.5.5.</span> <span class="post-toc-text">2.6 组件 &lt;Switch&gt;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-7-组件-lt-Redirect-gt"><span class="post-toc-number">1.5.6.</span> <span class="post-toc-text">2.7 组件 &lt;Redirect&gt;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-8-组件-lt-Prompt-gt"><span class="post-toc-number">1.5.7.</span> <span class="post-toc-text">2.8 组件 &lt;Prompt&gt;</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-参数传递"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">3. 参数传递</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-编写路由定义"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">3.1 编写路由定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-编写接收组件"><span class="post-toc-number">1.6.2.</span> <span class="post-toc-text">3.2 编写接收组件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-完整例子"><span class="post-toc-number">1.6.3.</span> <span class="post-toc-text">3.3 完整例子</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-没有匹配"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">4. 没有匹配</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-嵌套路由"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">5. 嵌套路由</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-自定义路由"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">6. 自定义路由</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-1-创建自定义-Route"><span class="post-toc-number">1.9.1.</span> <span class="post-toc-text">6.1 创建自定义 Route</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-2-使用自定义路由"><span class="post-toc-number">1.9.2.</span> <span class="post-toc-text">6.2 使用自定义路由</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-转换动画"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">7. 转换动画</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-1-安装"><span class="post-toc-number">1.10.1.</span> <span class="post-toc-text">7.1 安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-2-编写动画-css"><span class="post-toc-number">1.10.2.</span> <span class="post-toc-text">7.2 编写动画 css</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-3-导入包和动画样式"><span class="post-toc-number">1.10.3.</span> <span class="post-toc-text">7.3 导入包和动画样式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-4-编写样式"><span class="post-toc-number">1.10.4.</span> <span class="post-toc-text">7.4 编写样式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-5-编写导航"><span class="post-toc-number">1.10.5.</span> <span class="post-toc-text">7.5 编写导航</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-6-编写展示组件"><span class="post-toc-number">1.10.6.</span> <span class="post-toc-text">7.6 编写展示组件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-7-编写容器组件"><span class="post-toc-number">1.10.7.</span> <span class="post-toc-text">7.7 编写容器组件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">参考</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -374,7 +374,7 @@
         <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://oflimcy5e.bkt.clouddn.com/reactjs-logo-2.jpeg)">
     
             <p class="article-headline-p">
-                React 快速上手 - 06 容器组件、展示组件、操作组件
+                React 快速上手 - 07 前端路由 react-router
             </p>
         </div>
 
@@ -393,7 +393,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>会煮咖啡的猫</strong>
-        <span>5月 23, 2018</span>
+        <span>5月 24, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -434,7 +434,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=React 快速上手 - 06 容器组件、展示组件、操作组件&url=http://yoursite.com/2018/05/23/06-react-fast-component/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=React 快速上手 - 07 前端路由 react-router&url=http://yoursite.com/2018/05/24/07-react-fast-router/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -443,7 +443,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=React 快速上手 - 06 容器组件、展示组件、操作组件&url=http://yoursite.com/2018/05/23/06-react-fast-component/index.html&via=会煮咖啡的猫" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=React 快速上手 - 07 前端路由 react-router&url=http://yoursite.com/2018/05/24/07-react-fast-router/index.html&via=会煮咖啡的猫" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -452,7 +452,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/23/06-react-fast-component/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/24/07-react-fast-router/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -461,7 +461,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/23/06-react-fast-component/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/24/07-react-fast-router/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -486,324 +486,544 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="React-快速上手-06-容器组件、展示组件、操作组件"><a href="#React-快速上手-06-容器组件、展示组件、操作组件" class="headerlink" title="React 快速上手 - 06 容器组件、展示组件、操作组件"></a>React 快速上手 - 06 容器组件、展示组件、操作组件</h1><p>本文主要思考的问题是如何设计组件，react 库设计的那么灵巧，肯定不是用来做笨重的东西~</p>
-<p>我将会用 <code>截图 + 简述文字 + 精简代码</code> 来说明</p>
-<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>了解组件设计几个参考点:</p>
-<ul>
-<li>组件拆封原则</li>
-<li>组件间通讯</li>
-<li>双向绑定</li>
+        <h1 id="React-快速上手-07-前端路由-react-router"><a href="#React-快速上手-07-前端路由-react-router" class="headerlink" title="React 快速上手 - 07 前端路由 react-router"></a>React 快速上手 - 07 前端路由 react-router</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>基础使用</li>
+<li>参数传递</li>
+<li>路由匹配</li>
+<li>转换动画</li>
+<li>跳转路由</li>
 </ul>
-<h2 id="1-组件设计"><a href="#1-组件设计" class="headerlink" title="1. 组件设计"></a>1. 组件设计</h2><h3 id="1-1-按有无-状态管理-可以分为-有状态组件-无状态组件"><a href="#1-1-按有无-状态管理-可以分为-有状态组件-无状态组件" class="headerlink" title="1.1 按有无 状态管理 可以分为 有状态组件 无状态组件"></a>1.1 按有无 <code>状态管理</code> 可以分为 <code>有状态组件</code> <code>无状态组件</code></h3><p>图解说明</p>
-<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-23-13-29-23.png" alt="react-有无状态管理"></p>
-<h4 id="1-1-1-有状态组件-用-React-Component-形式创建"><a href="#1-1-1-有状态组件-用-React-Component-形式创建" class="headerlink" title="1.1.1 有状态组件, 用 React.Component 形式创建"></a>1.1.1 有状态组件, 用 <code>React.Component</code> 形式创建</h4><ul>
-<li>用来管理应用数据，如业务上，首页需要数据有:<ul>
-<li>推荐分类</li>
-<li>推荐广告</li>
-<li>推荐商品</li>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>react 16</li>
+<li>react-router 4</li>
+<li>react-router-dom 4</li>
+<li>react-transition-group</li>
 </ul>
-</li>
-</ul>
-<p>代码示例</p>
-<pre><code class="js">class MyComponent extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      推荐分类列表:[],
-      推荐广告列表:[],
-      推荐商品列表:[]
-      }
-  }
-  render() {
-    return &lt;首页&gt;...&lt;/首页&gt;
-  }
-}
+<h2 id="0-安装"><a href="#0-安装" class="headerlink" title="0. 安装"></a>0. 安装</h2><p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-24-10-14-20.png" alt="react-router"></p>
+<p>通过官网我们可以发现 <code>react-router</code> 可以用在 <code>web 网站端</code> <code>native 设备端</code></p>
+<p>我们这里针对 <code>web 网站端</code> 安装</p>
+<pre><code class="bash">yarn add react-router-dom
 </code></pre>
-<h4 id="1-1-2-无状态组件，以函数的方式展现多，在开发中尽量用这种形式"><a href="#1-1-2-无状态组件，以函数的方式展现多，在开发中尽量用这种形式" class="headerlink" title="1.1.2 无状态组件，以函数的方式展现多，在开发中尽量用这种形式"></a>1.1.2 无状态组件，以函数的方式展现多，在开发中尽量用这种形式</h4><p>这种组件自己不维护 状态，数据靠属性传入</p>
-<p>代码示例</p>
-<pre><code class="js">function Element(props) {
-  let val = props.val
-  return &lt;div&gt;组件 - ...&lt;/div&gt;
-}
-</code></pre>
-<h3 id="1-2-按组件-职能-划分为-容器组件-操作组件-展示组件"><a href="#1-2-按组件-职能-划分为-容器组件-操作组件-展示组件" class="headerlink" title="1.2 按组件 职能 划分为 容器组件 操作组件 展示组件"></a>1.2 按组件 <code>职能</code> 划分为 <code>容器组件</code> <code>操作组件</code> <code>展示组件</code></h3><p>图解说明</p>
-<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-23-13-50-57.png" alt="react-按职能划分组件"></p>
-<h4 id="1-2-1-容器组件"><a href="#1-2-1-容器组件" class="headerlink" title="1.2.1 容器组件"></a>1.2.1 容器组件</h4><p>这类组件本身是一个有状态组件，像一个舞台把大家都呈现上去, 把数据用 <code>属性</code> 方式传下去，然后子组件用 <code>事件</code> 方式把数据返回</p>
-<ul>
-<li>像上面这个商品搜索业务<ul>
-<li>状态有: 搜索关键字、排序、商品列表</li>
-<li>子组件有: 搜索栏、列表控制栏、商品列表</li>
+<p><code>react-router</code> 会包自动依赖安装</p>
+<h2 id="1-先跑一个简单例子"><a href="#1-先跑一个简单例子" class="headerlink" title="1. 先跑一个简单例子"></a>1. 先跑一个简单例子</h2><ul>
+<li>代码示范</li>
 </ul>
-</li>
-</ul>
-<p>代码示例</p>
-<pre><code class="js">class Container extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      搜索关键字: &#39;手机壳&#39;,
-      排序: &#39;综合&#39;,
-      商品列表: []
-      }
-  }
+<pre><code class="js">import React, {Component} from &#39;react&#39;
+import {HashRouter as Router, Route, Link, Switch} from &#39;react-router-dom&#39;
+
+const Home = () =&gt; (
+  &lt;div&gt;
+    &lt;h2&gt;首页&lt;/h2&gt;
+  &lt;/div&gt;
+)
+const About = () =&gt; (
+  &lt;div&gt;
+    &lt;h2&gt;关于&lt;/h2&gt;
+  &lt;/div&gt;
+)
+
+class RouterView extends Component {
   render() {
     return (
-      &lt;div&gt;
-        &lt;搜索栏 关键字={this.state.搜索关键字} onChange={...} /&gt;
-        &lt;列表控制栏 排序={this.state.排序} onChange={...} /&gt;
-        &lt;商品列表 商品列表={this.state.商品列表} onChange={...} /&gt;
-      &lt;/div&gt;
+      &lt;Router&gt;
+        &lt;div&gt;
+          &lt;ul&gt;
+            &lt;li&gt;
+              &lt;Link to=&quot;/&quot;&gt;首页&lt;/Link&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;Link to=&quot;/about&quot;&gt;关于&lt;/Link&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+
+          &lt;Switch&gt;
+            &lt;Route exact path=&quot;/&quot; component={Home} /&gt;
+            &lt;Route path=&quot;/about&quot; component={About} /&gt;
+          &lt;/Switch&gt;
+        &lt;/div&gt;
+      &lt;/Router&gt;
     )
   }
 }
+
+export default RouterView
 </code></pre>
-<h4 id="1-2-1-操作组件"><a href="#1-2-1-操作组件" class="headerlink" title="1.2.1 操作组件"></a>1.2.1 操作组件</h4><p>处理交互操作，比如 搜索框、用户注册登录、购物车、文章编辑、拍图、上传</p>
-<p>图解中的搜索框，接收 <code>属性</code> <code>关键字</code> 产生的新数据 <code>事件</code> 方式返回容器组件</p>
-<p>代码示例</p>
-<pre><code class="js">function SearchInput(props) {
-  let 关键字 = props.关键字
-  return (
-    &lt;div&gt;
-      &lt;input
-        type=&quot;text&quot;
-        value={关键字}
-        onKeyDown={props.onChange}
-        placeholder=&quot;输入 ...... ↩&quot;
-      /&gt;
-    &lt;/div&gt;
-  )
-}
-</code></pre>
-<h4 id="1-2-1-展示组件"><a href="#1-2-1-展示组件" class="headerlink" title="1.2.1 展示组件"></a>1.2.1 展示组件</h4><p>这种就更纯粹了，只接收 <code>属性</code> 数据，用来展示</p>
-<p>图解中的商品列表，接收 <code>属性</code> <code>商品列表</code></p>
-<p>代码示例</p>
-<pre><code class="js">function SearchInput(props) {
-  let 商品列表 = props.商品列表
-  return (
-    &lt;div&gt;
-      {商品列表.map((item, index) =&gt; (
-        &lt;商品项 key={item.id} 商品信息={item} /&gt;
-      ))}
-    &lt;/div&gt;
-  )
-}
+<ul>
+<li>代码结构</li>
+</ul>
+<blockquote>
+<p>最外层需要包裹组件 <code>&lt;Router&gt;</code><br>组件 <code>&lt;Route&gt;</code> 就是你看到的组件内容，放在哪里就哪里显示<br>组件 <code>&lt;Link&gt;</code> 是页面链接</p>
+</blockquote>
+<ul>
+<li>动图说明</li>
+</ul>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/react-router-1.gif" alt="基础路由"></p>
+<ul>
+<li>codepen</li>
+</ul>
+<p><a href="https://codepen.io/ducafecat/pen/GdBPqZ" target="_blank" rel="noopener">https://codepen.io/ducafecat/pen/GdBPqZ</a></p>
+<h2 id="2-基础使用"><a href="#2-基础使用" class="headerlink" title="2. 基础使用"></a>2. 基础使用</h2><h3 id="2-1-BrowserRouter-还是-HashRouter"><a href="#2-1-BrowserRouter-还是-HashRouter" class="headerlink" title="2.1 BrowserRouter 还是 HashRouter"></a>2.1 <code>BrowserRouter</code> 还是 <code>HashRouter</code></h3><ul>
+<li><code>BrowserRouter</code> 是需要服务端配合, 是基于html5的pushState和replaceState的，很多浏览器不支持，存在兼容性问题。</li>
+</ul>
+<blockquote>
+<p>链接地址长这样 <code>http://localhost:3000/about</code></p>
+</blockquote>
+<ul>
+<li><code>HashRouter</code> 是浏览器端解析路由</li>
+</ul>
+<blockquote>
+<p>链接地址长这样 <code>http://localhost:3000#/about</code></p>
+</blockquote>
+<ul>
+<li>灵活切换</li>
+</ul>
+<pre><code class="js">import {HashRouter as Router, Route, Link, Switch} from &#39;react-router-dom&#39;
+//import {BrowserRouter as Router, Route, Link, Switch} from &#39;react-router-dom&#39;
+
+&lt;Router&gt;
+  ...
+&lt;/Router&gt;
 </code></pre>
 <blockquote>
-<p>其中 <code>商品信息</code> 组件也是一个 <code>展示组件</code>, 尽可能的把组件拆分</p>
+<p>我用 <code>as Router</code> 做了别名，方便切换</p>
 </blockquote>
-<h2 id="2-组件间通讯"><a href="#2-组件间通讯" class="headerlink" title="2. 组件间通讯"></a>2. 组件间通讯</h2><p>其实就是在一个容器组件上，摆放了一个 <code>控制组件</code> 和一个 <code>展示组件</code></p>
-<p>图解说明</p>
-<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-23-14-36-27.png" alt="组件间通讯"></p>
-<p>我们动手写一下</p>
-<h3 id="第一步-编写输入组件"><a href="#第一步-编写输入组件" class="headerlink" title="第一步: 编写输入组件"></a>第一步: 编写输入组件</h3><p>代码</p>
-<pre><code class="js">function InputView(props) {
-  return (
-    &lt;div&gt;
-      &lt;input
-        type=&quot;text&quot;
-        onKeyDown={props.onChange}
-        placeholder=&quot;输入 ...... ↩&quot;
-      /&gt;
-    &lt;/div&gt;
-  )
-}
+<h3 id="2-2-组件-lt-Route-gt-属性-exact-完全匹配"><a href="#2-2-组件-lt-Route-gt-属性-exact-完全匹配" class="headerlink" title="2.2 组件 &lt;Route&gt; 属性 exact 完全匹配"></a>2.2 组件 <code>&lt;Route&gt;</code> 属性 <code>exact</code> 完全匹配</h3><pre><code class="js">&lt;Route path=&quot;/about&quot; component={About} /&gt;
 </code></pre>
-<p>处理 <code>onKeyDown</code> 消息，返回给父容器</p>
-<h3 id="第二步-编写列表展示组件"><a href="#第二步-编写列表展示组件" class="headerlink" title="第二步: 编写列表展示组件"></a>第二步: 编写列表展示组件</h3><p>代码</p>
-<pre><code class="js">function ListView(props) {
-  return (
-    &lt;ol&gt;
-      {props.datas &amp;&amp;
-        props.datas.map((item, index) =&gt; (
-          &lt;li key={index.toString()}&gt;{item}&lt;/li&gt;
-        ))}
-    &lt;/ol&gt;
-  )
-}
+<p><code>exact=false</code> 的时候 <code>path</code> 等于 <code>/about</code> <code>/about/me</code> 都能匹配</p>
+<p>但是 <code>exact=true</code> 的时候 只匹配 <code>path</code> 等于 <code>/about</code></p>
+<h3 id="2-3-组件-lt-Route-gt-属性-strict-末尾斜杠的匹配"><a href="#2-3-组件-lt-Route-gt-属性-strict-末尾斜杠的匹配" class="headerlink" title="2.3 组件 &lt;Route&gt; 属性 strict 末尾斜杠的匹配"></a>2.3 组件 <code>&lt;Route&gt;</code> 属性 <code>strict</code> 末尾斜杠的匹配</h3><pre><code class="js">&lt;Route strict path=&quot;/about/&quot; component={About} /&gt;
 </code></pre>
-<p><code>map</code> 循环打印数据列表</p>
-<h3 id="第三步-容器组件绑定状态、事件"><a href="#第三步-容器组件绑定状态、事件" class="headerlink" title="第三步: 容器组件绑定状态、事件"></a>第三步: 容器组件绑定状态、事件</h3><p>代码</p>
-<pre><code class="js">class ContainerView extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {list: []}
-    this.handleChange = this.handleChange.bind(this)
+<p>当 <code>strict=true</code> 路由请求末尾必须带 <code>/</code></p>
+<h3 id="2-4-组件-lt-Link-gt"><a href="#2-4-组件-lt-Link-gt" class="headerlink" title="2.4 组件 &lt;Link&gt;"></a>2.4 组件 <code>&lt;Link&gt;</code></h3><p>生成路由链接</p>
+<ul>
+<li>属性 <code>to: string</code></li>
+</ul>
+<p>路由地址字符串</p>
+<pre><code class="js">&lt;Link to=&quot;/about?me=haha&quot;&gt;关于&lt;/Link&gt;
+</code></pre>
+<ul>
+<li>属性 <code>to: object</code></li>
+</ul>
+<p>路由对象</p>
+<pre><code class="js">&lt;Link to={{
+  pathname: '/courses',
+  search: '?sort=name',
+  hash: '#the-hash',
+  state: { fromDashboard: true }>关于
+```
+
+* 属性 `replace: bool`
+
+设置 `true` 替换浏览器对象 `history` 为当前路由，按回退按钮时会发现之前的路由被替换了
+
+### 2.5 组件 `<navlink>`
+
+生成路由链接的基础上，如果是当前路由设置激活样式
+
+* 属性 `activeClassName: string`
+
+样式名称
+
+```js
+<navlink to="/about" activeclassname="selected">关于</navlink>
+```
+
+* 属性 `activeStyle: object`
+
+样式对象
+
+```js
+<navlink to="/about" activestyle="{{" fontweight:="" 'bold',="" color:="" 'red'="" }}&gt;关于&lt;="" navlink&gt;="" <="" code=""></navlink></navlink></code></pre>
+<ul>
+<li>属性 <code>isActive: func</code></li>
+</ul>
+<p>判断函数</p>
+<pre><code class="js">const checkIsActive = (match, location) =&gt; {
+  if (!match) {
+    return false
   }
-  handleChange(e) {
-    if (e.keyCode === 13) {
-      const value = e.target.value
-      e.target.value = &#39;&#39;
-      this.setState((state, props) =&gt; {
-        let list = state.list
-        list.push(value)
-        return {list}
-      })
+  ...
+  return true
+}
+
+&lt;NavLink to=&quot;/about&quot; isActive={checkIsActive}&gt;关于&lt;/NavLink&gt;
+</code></pre>
+<h3 id="2-6-组件-lt-Switch-gt"><a href="#2-6-组件-lt-Switch-gt" class="headerlink" title="2.6 组件 &lt;Switch&gt;"></a>2.6 组件 <code>&lt;Switch&gt;</code></h3><p>只渲染出第一个与当前访问地址匹配的 <code>&lt;Route&gt;</code> 或 <code>&lt;Redirect&gt;</code></p>
+<p>否则你有几个 <code>&lt;Route&gt;</code> 都会显示</p>
+<h3 id="2-7-组件-lt-Redirect-gt"><a href="#2-7-组件-lt-Redirect-gt" class="headerlink" title="2.7 组件 &lt;Redirect&gt;"></a>2.7 组件 <code>&lt;Redirect&gt;</code></h3><p>路由重定向</p>
+<pre><code class="js">&lt;Switch&gt;
+  &lt;Redirect from=&#39;/users/:id&#39; to=&#39;/users/profile/:id&#39;/&gt;
+  &lt;Route path=&#39;/users/profile/:id&#39; component={Profile}/&gt;
+&lt;/Switch&gt;
+</code></pre>
+<p>当请求 <code>/users/:id</code> 被重定向去 ‘/users/profile/:id’</p>
+<ul>
+<li>属性 <code>from: string</code></li>
+</ul>
+<p>需要匹配的将要被重定向路径。</p>
+<ul>
+<li>属性 <code>to: string</code></li>
+</ul>
+<p>重定向的 URL 字符串</p>
+<ul>
+<li>属性 <code>to: object</code></li>
+</ul>
+<p>重定向的 location 对象</p>
+<ul>
+<li>属性 <code>push: bool</code></li>
+</ul>
+<p>若为真，重定向操作将会把新地址加入到访问历史记录里面，并且无法回退到前面的页面。</p>
+<h3 id="2-8-组件-lt-Prompt-gt"><a href="#2-8-组件-lt-Prompt-gt" class="headerlink" title="2.8 组件 &lt;Prompt&gt;"></a>2.8 组件 <code>&lt;Prompt&gt;</code></h3><p>当用户离开当前页面前做出一些提示。</p>
+<ul>
+<li>属性 <code>message: string</code><br>当用户离开当前页面时，设置的提示信息。</li>
+</ul>
+<pre><code class="js">&lt;Prompt message=&quot;确定要离开？&quot; /&gt;
+</code></pre>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-24-13-13-17.png" alt="Prompt"></p>
+<ul>
+<li>属性 <code>message: func</code></li>
+</ul>
+<p>当用户离开当前页面时，设置的回掉函数</p>
+<pre><code class="js">&lt;Prompt message={location =&gt; `确定要去 ${location.pathname} ?`} /&gt;
+</code></pre>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-24-13-17-14.png" alt="Prompt-func"></p>
+<ul>
+<li>属性 <code>when: bool</code></li>
+</ul>
+<p>决定是否启用 Prompt</p>
+<h2 id="3-参数传递"><a href="#3-参数传递" class="headerlink" title="3. 参数传递"></a>3. 参数传递</h2><h3 id="3-1-编写路由定义"><a href="#3-1-编写路由定义" class="headerlink" title="3.1 编写路由定义"></a>3.1 编写路由定义</h3><pre><code class="js">&lt;Route path=&quot;/topics/:topicId&quot; component={Topic} /&gt;
+</code></pre>
+<p><code>:topicId</code> 定义参数</p>
+<h3 id="3-2-编写接收组件"><a href="#3-2-编写接收组件" class="headerlink" title="3.2 编写接收组件"></a>3.2 编写接收组件</h3><pre><code class="js">const Topic = ({match}) =&gt; (
+  &lt;div&gt;
+    &lt;h3&gt;参数: {match.params.topicId}&lt;/h3&gt;
+  &lt;/div&gt;
+)
+</code></pre>
+<p><code>match.params</code> 就是传递的参数</p>
+<h3 id="3-3-完整例子"><a href="#3-3-完整例子" class="headerlink" title="3.3 完整例子"></a>3.3 完整例子</h3><p>代码</p>
+<pre><code class="js">import React, {Component} from &#39;react&#39;
+import {BrowserRouter as Router, Route, Link, Switch} from &#39;react-router-dom&#39;
+
+const Topic = ({match}) =&gt; (
+  &lt;div&gt;
+    &lt;h3&gt;参数: {match.params.topicId}&lt;/h3&gt;
+  &lt;/div&gt;
+)
+
+class RouterView extends Component {
+  render() {
+    return (
+      &lt;Router&gt;
+        &lt;div&gt;
+          &lt;ul&gt;
+            &lt;li&gt;
+              &lt;Link to=&quot;/topics/rendering&quot;&gt;Rendering with React&lt;/Link&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;Link to=&quot;/topics/components&quot;&gt;Components&lt;/Link&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;Link to=&quot;/topics/props-v-state&quot;&gt;Props v. State&lt;/Link&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+
+          &lt;Switch&gt;
+            &lt;Route path=&quot;/topics/:topicId&quot; component={Topic} /&gt;
+          &lt;/Switch&gt;
+        &lt;/div&gt;
+      &lt;/Router&gt;
+    )
+  }
+}
+
+export default RouterView
+</code></pre>
+<p>动图效果</p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/react-router-2.gif" alt="参数传递"></p>
+<h2 id="4-没有匹配"><a href="#4-没有匹配" class="headerlink" title="4. 没有匹配"></a>4. 没有匹配</h2><p>代码</p>
+<pre><code class="js">import React, {Component} from &#39;react&#39;
+import {BrowserRouter as Router, Route, Link, Switch} from &#39;react-router-dom&#39;
+
+const Back = () =&gt; (
+  &lt;div&gt;
+    &lt;h2&gt;首页&lt;/h2&gt;
+  &lt;/div&gt;
+)
+
+const NoMatch = () =&gt; (
+  &lt;div&gt;
+    &lt;h2&gt;没有匹配&lt;/h2&gt;
+  &lt;/div&gt;
+)
+
+class RouterView extends Component {
+  render() {
+    return (
+      &lt;Router&gt;
+        &lt;div&gt;
+          &lt;ul&gt;
+            &lt;li&gt;
+              &lt;Link to=&quot;/back&quot;&gt;返回&lt;/Link&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;Link to=&quot;/also/will/not/match&quot;&gt;路由请求&lt;/Link&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+
+          &lt;Switch&gt;
+            &lt;Route path=&quot;/back&quot; component={Back} /&gt;
+            &lt;Route component={NoMatch} /&gt;
+          &lt;/Switch&gt;
+        &lt;/div&gt;
+      &lt;/Router&gt;
+    )
+  }
+}
+
+export default RouterView
+</code></pre>
+<blockquote>
+<p>在最下面写个默认组件，都没命中，就是这个了</p>
+</blockquote>
+<p>动图效果</p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/react-router-3.gif" alt="没有匹配"></p>
+<h2 id="5-嵌套路由"><a href="#5-嵌套路由" class="headerlink" title="5. 嵌套路由"></a>5. 嵌套路由</h2><p>在 <code>react-route4</code> 中嵌套要这样写</p>
+<pre><code class="js">&lt;Switch&gt;
+  &lt;Route path=&quot;/article&quot; component={ArticleList} /&gt;
+  &lt;Route path=&quot;/article/:id&quot; component={Article} /&gt;
+  &lt;Route path=&quot;/article/:id/recommend&quot; component={ArticleRecommend} /&gt;
+&lt;/Switch&gt;
+</code></pre>
+<p>写成一排，业务如下</p>
+<table>
+<thead>
+<tr>
+<th>path</th>
+<th>组件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/article</td>
+<td>ArticleList</td>
+<td>文章列表</td>
+</tr>
+<tr>
+<td>/article/:id</td>
+<td>Article</td>
+<td>文章</td>
+</tr>
+<tr>
+<td>/article/:id/recommend</td>
+<td>ArticleRecommend</td>
+<td>文章推荐</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-自定义路由"><a href="#6-自定义路由" class="headerlink" title="6. 自定义路由"></a>6. 自定义路由</h2><p>适合用来做权限检查</p>
+<h3 id="6-1-创建自定义-Route"><a href="#6-1-创建自定义-Route" class="headerlink" title="6.1 创建自定义 Route"></a>6.1 创建自定义 <code>Route</code></h3><pre><code class="js">const isAuthenticated = true
+const PrivateRoute = ({ component: Component, ...rest }) =&gt; (
+  &lt;Route
+    {...rest}
+    render={props =&gt;
+      isAuthenticated ? (
+        &lt;Component {...props} /&gt;
+      ) : (
+        &lt;Redirect
+          to={{
+            pathname: "/login",
+            state: { from: props.location }
+          }}
+        /&gt;
+      )
     }
-  }
-  render() {
-    return (
-      &lt;div&gt;
-        &lt;InputView onChange={this.handleChange} /&gt;
-        &lt;ListView datas={this.state.list} /&gt;
-      &lt;/div&gt;
-    )
-  }
+  /&gt;
+);
+</code></pre>
+<h3 id="6-2-使用自定义路由"><a href="#6-2-使用自定义路由" class="headerlink" title="6.2 使用自定义路由"></a>6.2 使用自定义路由</h3><pre><code class="js">...
+&lt;Route path=&quot;/public&quot; component={Public} /&gt;
+&lt;Route path=&quot;/login&quot; component={Login} /&gt;
+&lt;PrivateRoute path=&quot;/protected&quot; component={Protected} /&gt;
+</code></pre>
+<h2 id="7-转换动画"><a href="#7-转换动画" class="headerlink" title="7. 转换动画"></a>7. 转换动画</h2><p>这里用到了 <code>react-transition-group</code> 库</p>
+<p>动图效果</p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/react-router-4.gif" alt="转换动画"></p>
+<h3 id="7-1-安装"><a href="#7-1-安装" class="headerlink" title="7.1 安装"></a>7.1 安装</h3><pre><code class="js">yarn add react-transition-group
+</code></pre>
+<h3 id="7-2-编写动画-css"><a href="#7-2-编写动画-css" class="headerlink" title="7.2 编写动画 css"></a>7.2 编写动画 <code>css</code></h3><p>文件 <code>fade.css</code></p>
+<pre><code class="css">.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
+
+.fade-exit {
+  opacity: 0;
 }
 </code></pre>
-<p><code>e.keyCode === 13</code> 表示一直监控到输入回车，开始更新状态</p>
-<ul>
-<li>动图效果</li>
-</ul>
-<p><img src="http://oflimcy5e.bkt.clouddn.com/SearchInput2.gif" alt="组件间通讯"></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fade-enter</td>
+<td>动画启动</td>
+</tr>
+<tr>
+<td>fade-enter-active</td>
+<td>动画激活</td>
+</tr>
+<tr>
+<td>fade-exit</td>
+<td>动画离开</td>
+</tr>
+</tbody>
+</table>
+<p>其它动画样式名字可以参考 <a href="http://reactcommunity.org/react-transition-group/css-transition" target="_blank" rel="noopener">css-transition</a></p>
+<h3 id="7-3-导入包和动画样式"><a href="#7-3-导入包和动画样式" class="headerlink" title="7.3 导入包和动画样式"></a>7.3 导入包和动画样式</h3><pre><code class="js">...
+import {TransitionGroup, CSSTransition} from &#39;react-transition-group&#39;
+import &#39;./fade.css&#39;
+</code></pre>
+<p><code>TransitionGroup, CSSTransition</code> 必须导入</p>
+<h3 id="7-4-编写样式"><a href="#7-4-编写样式" class="headerlink" title="7.4 编写样式"></a>7.4 编写样式</h3><pre><code class="js">const styles = {}
+
+styles.fill = {
+  position: &#39;relative&#39;,
+  height: &#39;200px&#39;,
+  width: &#39;500px&#39;
+}
+
+styles.content = {
+  ...styles.fill,
+  top: &#39;40px&#39;,
+  textAlign: &#39;center&#39;,
+  height: &#39;120px&#39;
+}
+
+styles.nav = {
+  padding: 0,
+  margin: 0,
+  position: &#39;absolute&#39;,
+  top: 0,
+  height: &#39;40px&#39;,
+  width: &#39;100%&#39;,
+  display: &#39;flex&#39;
+}
+
+styles.navItem = {
+  textAlign: &#39;center&#39;,
+  flex: 1,
+  listStyleType: &#39;none&#39;,
+  padding: &#39;10px&#39;
+}
+
+styles.hsl = {
+  color: &#39;white&#39;,
+  paddingTop: &#39;20px&#39;,
+  fontSize: &#39;30px&#39;,
+  height: &#39;120px&#39;
+}
+
+styles.rgb = {
+  color: &#39;white&#39;,
+  paddingTop: &#39;20px&#39;,
+  fontSize: &#39;30px&#39;,
+  height: &#39;120px&#39;
+}
+</code></pre>
+<p>这是 <code>react</code> 的样式对象，当然你也可以写成 <code>.css</code> 文件</p>
+<h3 id="7-5-编写导航"><a href="#7-5-编写导航" class="headerlink" title="7.5 编写导航"></a>7.5 编写导航</h3><pre><code class="js">const NavLink = props =&gt; (
+  &lt;li style={styles.navItem}&gt;
+    &lt;Link {...props} style={{color: 'inherit'}} /&gt;
+  &lt;/li&gt;
+)
+</code></pre>
+<h3 id="7-6-编写展示组件"><a href="#7-6-编写展示组件" class="headerlink" title="7.6 编写展示组件"></a>7.6 编写展示组件</h3><pre><code class="js">// 切换区域 A
+const HSL = ({match: {params}}) =&gt; (
+  &lt;div
+    style={{
+      ...styles.fill,
+      ...styles.hsl,
+      background: `hsl(${params.h}, ${params.s}%, ${params.l}%)`
+    }}
+  &gt;
+    hsl({params.h}, {params.s}%, {params.l}%)
+  &lt;/div&gt;
+)
+
+// 切换区域 B
+const RGB = ({match: {params}}) =&gt; (
+  &lt;div
+    style={{
+      ...styles.fill,
+      ...styles.rgb,
+      background: `rgb(${params.r}, ${params.g}, ${params.b})`
+    }}
+  &gt;
+    rgb({params.r}, {params.g}, {params.b})
+  &lt;/div&gt;
+)
+</code></pre>
+<h3 id="7-7-编写容器组件"><a href="#7-7-编写容器组件" class="headerlink" title="7.7 编写容器组件"></a>7.7 编写容器组件</h3><pre><code class="js">const RouterView = () =&gt; (
+  &lt;Router&gt;
+    &lt;Route
+      render={({location}) =&gt; (
+        &lt;div style={styles.fill}&gt;
+          &lt;Route
+            exact
+            path=&quot;/&quot;
+            render={() =&gt; &lt;Redirect to=&quot;/hsl/10/90/50&quot; /&gt;}
+          /&gt;
+
+          &lt;ul style={styles.nav}&gt;
+            &lt;NavLink to=&quot;/hsl/10/90/50&quot;&gt;Red&lt;/NavLink&gt;
+            &lt;NavLink to=&quot;/hsl/120/100/40&quot;&gt;Green&lt;/NavLink&gt;
+            &lt;NavLink to=&quot;/rgb/33/150/243&quot;&gt;Blue&lt;/NavLink&gt;
+            &lt;NavLink to=&quot;/rgb/240/98/146&quot;&gt;Pink&lt;/NavLink&gt;
+          &lt;/ul&gt;
+
+          &lt;div style={styles.content}&gt;
+            &lt;TransitionGroup&gt;
+              &lt;CSSTransition key={location.key} classNames=&quot;fade&quot; timeout={300}&gt;
+                &lt;Switch location={location}&gt;
+                  &lt;Route exact path=&quot;/hsl/:h/:s/:l&quot; component={HSL} /&gt;
+                  &lt;Route exact path=&quot;/rgb/:r/:g/:b&quot; component={RGB} /&gt;
+                  &lt;Route render={() =&gt; &lt;div&gt;Not Found&lt;/div&gt;} /&gt;
+                &lt;/Switch&gt;
+              &lt;/CSSTransition&gt;
+            &lt;/TransitionGroup&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+    /&gt;
+  &lt;/Router&gt;
+)
+</code></pre>
 <ul>
 <li>codepen</li>
 </ul>
-<p><a href="https://codepen.io/ducafecat/pen/pVZqjp" target="_blank" rel="noopener">https://codepen.io/ducafecat/pen/pVZqjp</a></p>
-<h2 id="3-数据双向绑定"><a href="#3-数据双向绑定" class="headerlink" title="3. 数据双向绑定"></a>3. 数据双向绑定</h2><p>这个例子加入数据双向绑定功能，这在表单操作中用的很频繁</p>
-<p>图解说明</p>
-<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-23-15-04-26.png" alt="数据双向绑定"></p>
-<p>还是用代码说明</p>
-<h3 id="3-1-第一步：输入组件"><a href="#3-1-第一步：输入组件" class="headerlink" title="3.1 第一步：输入组件"></a>3.1 第一步：输入组件</h3><p>代码</p>
-<pre><code class="js">class InputView extends Component {
-  constructor(props) {
-    super(props)
-    this.form = props.form // 父容器 state.form
-    this.sync = props.sync // 父容器 sync
-    this.handleChange = this.handleChange.bind(this)
-  }
-  handleChange(e) {
-    let name = e.target.attributes.name.value
-    let value = e.target.value
-    this.sync({name, value})
-  }
-  render() {
-    return (
-      &lt;ul&gt;
-        &lt;li&gt;
-          &lt;input
-            name=&quot;input&quot;
-            type=&quot;text&quot;
-            value={this.form.input}
-            onChange={this.handleChange}
-          /&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-          &lt;textarea
-            name=&quot;textarea&quot;
-            value={this.form.textarea}
-            onChange={this.handleChange}
-          /&gt;
-        &lt;/li&gt;
-        &lt;li&gt;
-          &lt;select
-            name=&quot;select&quot;
-            value={this.form.select}
-            onChange={this.handleChange}
-          &gt;
-            &lt;option value=&quot;&quot;&gt;---&lt;/option&gt;
-            &lt;option value=&quot;grapefruit&quot;&gt;Grapefruit&lt;/option&gt;
-            &lt;option value=&quot;lime&quot;&gt;Lime&lt;/option&gt;
-            &lt;option value=&quot;coconut&quot;&gt;Coconut&lt;/option&gt;
-            &lt;option value=&quot;mango&quot;&gt;Mango&lt;/option&gt;
-          &lt;/select&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    )
-  }
-}
-</code></pre>
-<ul>
-<li><code>props.form</code> 是容器传入的表单数据，结构如下</li>
-</ul>
-<pre><code class="json">{
-  input: &#39;&#39;,
-  textarea: &#39;&#39;,
-  select: &#39;&#39;
-}
-</code></pre>
-<p>按控件名称 <code>key / val</code> 结构</p>
-<ul>
-<li><code>props.sync</code> 是回传父容器的事件，相应代码如下</li>
-</ul>
-<pre><code class="js">  handleChange(e) {
-    let name = e.target.attributes.name.value
-    let value = e.target.value
-    this.sync({name, value})
-  }
-</code></pre>
-<p>可以发现回传的是 <code>{控件名, 控件值}</code>，这里是简写（键、值 名相同时可以写一个），完整格式是</p>
-<pre><code class="js">{
-  name: name,
-  value: value
-}
-</code></pre>
-<h3 id="3-2-第二步：展示组件"><a href="#3-2-第二步：展示组件" class="headerlink" title="3.2 第二步：展示组件"></a>3.2 第二步：展示组件</h3><p>代码</p>
-<pre><code class="js">function ListView(props) {
-  let form = props.form
-  let list = []
-  for (let key in form) {
-    list.push({
-      key,
-      value: form[key]
-    })
-  }
-  return (
-    &lt;ul&gt;
-      {list &amp;&amp;
-        list.map((item, index) =&gt; (
-          &lt;li key={index.toString()}&gt;
-            {item.key} - {item.value}
-          &lt;/li&gt;
-        ))}
-    &lt;/ul&gt;
-  )
-}
-</code></pre>
-<p>这里做展示就简单了，接收到属性 <code>form</code> 后，格式化成数组 <code>list</code> ，然后 <code>map</code> 打印</p>
-<h3 id="3-3-第三步：容器组件"><a href="#3-3-第三步：容器组件" class="headerlink" title="3.3 第三步：容器组件"></a>3.3 第三步：容器组件</h3><p>代码</p>
-<pre><code class="js">class ContainerView extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {form: {input: &#39;&#39;, textarea: &#39;&#39;, select: &#39;&#39;}}
-    this.handleSync = this.handleSync.bind(this)
-  }
-  handleSync(item) {
-    this.setState((prevState, props) =&gt; {
-      let form = prevState.form
-      form[item.name] = item.value
-      return {form}
-    })
-  }
-  render() {
-    return (
-      &lt;div&gt;
-        &lt;InputView sync={this.handleSync} form={this.state.form} /&gt;
-        &lt;ListView form={this.state.form} /&gt;
-      &lt;/div&gt;
-    )
-  }
-}
-</code></pre>
-<p><code>handleSync</code> 中 <code>form[item.name] = item.value</code> 动态更新 <code>key / value</code> 达到更新 <code>state</code></p>
-<ul>
-<li>动图效果</li>
-</ul>
-<p><img src="http://oflimcy5e.bkt.clouddn.com/SearchInput3.gif" alt=""></p>
-<ul>
-<li>codepen</li>
-</ul>
-<p><a href="https://codepen.io/ducafecat/pen/GdBPZZ" target="_blank" rel="noopener">https://codepen.io/ducafecat/pen/GdBPZZ</a></p>
-<h2 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h2><p>通过学习本章后，大家写具体功能代码前，可以先做下 <strong>UI组件架构设计</strong></p>
-<p>这个没有那么神秘，就是描述下有哪些组件、他们之间如何组装</p>
-<p>如果大脑中抽象的不清楚，可以借助原型工具设计，自己能看懂就行，否则边写边设计容易乱掉</p>
-<p>设计完成后，过几遍没啥问题了，再编写具体功能</p>
+<p><a href="https://codepen.io/ducafecat/pen/rvroYP" target="_blank" rel="noopener">https://codepen.io/ducafecat/pen/rvroYP</a></p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
-<li><a href="https://github.com/ducafecat/reactjs-example/blob/master/src/base/4-1-inputListView.js" target="_blank" rel="noopener">reactjs-example / 4-1-inputListView.js</a></li>
-<li><a href="https://github.com/ducafecat/reactjs-example/blob/master/src/base/4-2-formView.js" target="_blank" rel="noopener">reactjs-example / 4-2-formView.js</a></li>
+<li><a href="https://github.com/ducafecat/reactjs-example/blob/master/src/base/5-1-routerBase.js" target="_blank" rel="noopener">reactjs-example / 5-1-routerBase</a></li>
+<li><a href="https://github.com/ducafecat/reactjs-example/blob/master/src/base/5-2-routerParams.js" target="_blank" rel="noopener">reactjs-example / 5-2-routerParams</a></li>
+<li><a href="https://github.com/ducafecat/reactjs-example/blob/master/src/base/5-3-routerNoMatch.js" target="_blank" rel="noopener">reactjs-example / 5-3-routerNoMatch</a></li>
+<li><a href="https://github.com/ducafecat/reactjs-example/blob/master/src/base/5-4-routerTransitions.js" target="_blank" rel="noopener">reactjs-example / 5-4-routerTransitions</a></li>
+<li><a href="https://github.com/ducafecat/reactjs-example/blob/master/src/base/5-5-routerRedirect.js" target="_blank" rel="noopener">reactjs-example / 5-5-routerRedirect</a></li>
 </ul>
-<h2 id="参考文"><a href="#参考文" class="headerlink" title="参考文"></a>参考文</h2><ul>
-<li><a href="https://reactjs.org/docs/lifting-state-up.html" target="_blank" rel="noopener">Lifting State Up</a></li>
-<li><a href="https://reactjs.org/docs/thinking-in-react.html" target="_blank" rel="noopener">Thinking in React</a></li>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://reacttraining.com/react-router/" target="_blank" rel="noopener">react-router</a></li>
+<li><a href="http://reactcommunity.org/react-transition-group/" target="_blank" rel="noopener">react-transition-group</a></li>
+<li><a href="https://serverless-stack.com/chapters/code-splitting-in-create-react-app.html" target="_blank" rel="noopener">code-splitting-in-create-react-app</a></li>
 </ul>
 
         
@@ -825,21 +1045,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/05/24/07-react-fast-router/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/05/22/05-react-fast-render/" id="post_nav-older" class="next-content">
+        <a href="/2018/05/23/06-react-fast-component/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
