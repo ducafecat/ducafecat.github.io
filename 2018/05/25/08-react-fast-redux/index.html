@@ -43,7 +43,7 @@
     
     <title>
         
-            GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发 | 
+            React 快速上手 - 08 redux 状态管理 react-redux | 
         
         东西
     </title>
@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content=",graphql eggjs">
+    <meta name="keywords" content=",react">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -220,7 +220,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="东西">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/05/02/08-graphql-eggjs-server/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/05/25/08-react-fast-redux/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="东西">
@@ -235,16 +235,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/05/02/08-graphql-eggjs-server/">
+    <meta property="og:url" content="http://yoursite.com/2018/05/25/08-react-fast-redux/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发 | 东西">
+    <meta property="og:title" content="React 快速上手 - 08 redux 状态管理 react-redux | 东西">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="graphql eggjs"> 
+    <meta property="og:article:tag" content="react"> 
 
     
-        <meta property="article:published_time" content="Wed May 02 2018 17:13:41 GMT+0800">
-        <meta property="article:modified_time" content="Mon May 07 2018 11:15:39 GMT+0800">
+        <meta property="article:published_time" content="Fri May 25 2018 10:55:21 GMT+0800">
+        <meta property="article:modified_time" content="Fri May 25 2018 15:30:47 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -252,7 +252,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/05/02/08-graphql-eggjs-server/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/05/25/08-react-fast-redux/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -264,10 +264,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/05/02/08-graphql-eggjs-server/index.html",
-    "headline": "GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发",
-    "datePublished": "Wed May 02 2018 17:13:41 GMT+0800",
-    "dateModified": "Mon May 07 2018 11:15:39 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/05/25/08-react-fast-redux/index.html",
+    "headline": "React 快速上手 - 08 redux 状态管理 react-redux",
+    "datePublished": "Fri May 25 2018 10:55:21 GMT+0800",
+    "dateModified": "Fri May 25 2018 15:30:47 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "会煮咖啡的猫",
@@ -285,7 +285,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",graphql eggjs",
+    "keywords": ",react",
     "description": "",
 }
 </script>
@@ -351,7 +351,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#GraphQL-渐进学习-08-graphql-采用eggjs-服务端开发"><span class="post-toc-number">1.</span> <span class="post-toc-text">GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#软件环境"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">软件环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#步骤"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-使用-egg-graphql"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">1 使用 egg-graphql</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-egg-graphql-代码结构"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">2 egg-graphql 代码结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-编写-common-全局类型"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">3 编写 common 全局类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-编写-user-业务"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">4 编写 user 业务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-编写-query-查询"><span class="post-toc-number">1.4.5.</span> <span class="post-toc-text">5 编写 query 查询</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-编写-mutation-更新"><span class="post-toc-number">1.4.6.</span> <span class="post-toc-text">6 编写 mutation 更新</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-开启-cros-跨域访问"><span class="post-toc-number">1.4.7.</span> <span class="post-toc-text">7 开启 cros 跨域访问</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-编写数据服务-jwt-授权"><span class="post-toc-number">1.4.8.</span> <span class="post-toc-text">8 编写数据服务 jwt 授权</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-token-验证中间件"><span class="post-toc-number">1.4.9.</span> <span class="post-toc-text">9 token 验证中间件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">参考</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-文章"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">1 文章</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-组件"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">2 组件</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#React-快速上手-08-redux-状态管理-react-redux"><span class="post-toc-number">1.</span> <span class="post-toc-text">React 快速上手 - 08 redux 状态管理 react-redux</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#闲话"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">闲话</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#redux-是什么-可以不用么"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">redux 是什么, 可以不用么</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#动手创建一个-redux-应用"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">动手创建一个 redux 应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第一步-编写-Action"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">第一步: 编写 Action</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第二步-编写-Reducers"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">第二步: 编写 Reducers</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第三步-合并-Reducers"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">第三步: 合并 Reducers</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第四步-编写组件-AddTodo"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">第四步: 编写组件 AddTodo</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第五步-编写组件-TodoList"><span class="post-toc-number">1.4.5.</span> <span class="post-toc-text">第五步: 编写组件 TodoList</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第六步-容器组件"><span class="post-toc-number">1.4.6.</span> <span class="post-toc-text">第六步: 容器组件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#最后-适配-App"><span class="post-toc-number">1.4.7.</span> <span class="post-toc-text">最后: 适配 App</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#调试工具-Redux-DevTools-extension"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">调试工具 Redux DevTools extension</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-安装-chrome-插件"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">1. 安装 chrome 插件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-配置代码"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">2. 配置代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-开启插件"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">3. 开启插件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#codepen"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">codepen</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">参考</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -371,10 +371,10 @@
     <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://oflimcy5e.bkt.clouddn.com/graphql-quick-start-thumbnail.png?imageView2/2/w/800)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://oflimcy5e.bkt.clouddn.com/reactjs-logo-2.jpeg)">
     
             <p class="article-headline-p">
-                GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发
+                React 快速上手 - 08 redux 状态管理 react-redux
             </p>
         </div>
 
@@ -393,7 +393,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>会煮咖啡的猫</strong>
-        <span>5月 02, 2018</span>
+        <span>5月 25, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -417,7 +417,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/graphql-eggjs/">graphql eggjs</a>
+        <a class="post_tag-link" href="/tags/react/">react</a>
     </ul>
     
 
@@ -434,7 +434,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发&url=http://yoursite.com/2018/05/02/08-graphql-eggjs-server/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=React 快速上手 - 08 redux 状态管理 react-redux&url=http://yoursite.com/2018/05/25/08-react-fast-redux/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -443,7 +443,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发&url=http://yoursite.com/2018/05/02/08-graphql-eggjs-server/index.html&via=会煮咖啡的猫" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=React 快速上手 - 08 redux 状态管理 react-redux&url=http://yoursite.com/2018/05/25/08-react-fast-redux/index.html&via=会煮咖啡的猫" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -452,7 +452,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/02/08-graphql-eggjs-server/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/25/08-react-fast-redux/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -461,7 +461,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/02/08-graphql-eggjs-server/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/25/08-react-fast-redux/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -486,418 +486,324 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="GraphQL-渐进学习-08-graphql-采用eggjs-服务端开发"><a href="#GraphQL-渐进学习-08-graphql-采用eggjs-服务端开发" class="headerlink" title="GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发"></a>GraphQL 渐进学习 08-graphql-采用eggjs-服务端开发</h1><h2 id="软件环境"><a href="#软件环境" class="headerlink" title="软件环境"></a>软件环境</h2><ul>
-<li>eggjs 2.2.1</li>
-</ul>
-<blockquote>
-<p>请注意当前的环境，老版本的 <code>egg</code> 可能配置有差异</p>
-</blockquote>
+        <h1 id="React-快速上手-08-redux-状态管理-react-redux"><a href="#React-快速上手-08-redux-状态管理-react-redux" class="headerlink" title="React 快速上手 - 08 redux 状态管理 react-redux"></a>React 快速上手 - 08 redux 状态管理 react-redux</h1><p>今天我会快速的过一下 <code>redux</code> 知识，然后讨论下 <code>适用性</code>，最后为了让大家能快速学习，简化了官方的经典 Demo <code>todo</code> ，跟着我做一遍就行。</p>
 <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
-<li>创建 graphql 服务</li>
-<li>用户登录授权</li>
-<li>用户访问鉴权</li>
+<li>了结什么是 redux</li>
+<li>什么情况下适用</li>
+<li>创建一个 redux 应用</li>
+<li>安装调试插件</li>
 </ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
-<li><a href="https://github.com/ducafecat/eggjs-graphql-vue-example/tree/master/egg-server" target="_blank" rel="noopener">ducafecat/eggjs-graphql-example/egg-server</a></li>
-</ul>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1-使用-egg-graphql"><a href="#1-使用-egg-graphql" class="headerlink" title="1 使用 egg-graphql"></a>1 使用 <code>egg-graphql</code></h3><ul>
-<li>安装包</li>
-</ul>
-<pre><code class="bash">npm i --save egg-graphql
-</code></pre>
-<ul>
-<li>开启插件 <code>/config/plugin.js</code></li>
-</ul>
-<pre><code class="js">exports.graphql = {
-  enable: true,
-  package: &#39;egg-graphql&#39;
+<h2 id="闲话"><a href="#闲话" class="headerlink" title="闲话"></a>闲话</h2><p><code>redux</code> 是一个很深的话题，先聊聊标准学习路线，打开 <a href="https://redux.js.org/introduction" target="_blank" rel="noopener">https://redux.js.org/introduction</a></p>
+<p>笔者为了写这文章，可是安静的读了一遍</p>
+<p>首先 <code>Introduction</code> 7 篇</p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-25-11-06-46.png" alt="redux-introduction"></p>
+<p>好像懂了什么，不知道呢</p>
+<p>然后 <code>Base</code> 6 篇</p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-25-11-09-32.png" alt="redux-Base"></p>
+<p>其实 <a href="https://redux.js.org/basics/example-todo-list" target="_blank" rel="noopener">Example: Todo List</a> 这才是最有帮助的</p>
+<p>又听了视频 <a href="https://egghead.io/courses/getting-started-with-redux" target="_blank" rel="noopener">Getting Started with Redux 视频</a></p>
+<p>好啰嗦啊</p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-25-13-55-28.png" alt="Redux 视频 Getting Started with Redux"></p>
+<p><strong>不过这也是学习的正确姿势，总要看一遍官方文档，无奈官网设计的更像一个学术站点，而不是类库工具一类的指导说明</strong></p>
+<p>好了好了~吐槽完毕，开始正文！</p>
+<h2 id="redux-是什么-可以不用么"><a href="#redux-是什么-可以不用么" class="headerlink" title="redux 是什么, 可以不用么"></a>redux 是什么, 可以不用么</h2><p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-25-11-27-37.png" alt="ducafecat_2018-05-25-11-27-37"></p>
+<p>这张图是 <a href="https://facebook.github.io/flux/docs" target="_blank" rel="noopener">Flux</a> 官网的，画的很好。</p>
+<p><code>Redux</code> 是一种 <code>数据的管理</code> 方式，界面上发起各种操作 <code>Action</code> ，然后 <code>Dispatcher</code> 到 <code>Store</code> 更新状态 <code>State</code>，推送新状态到视图 <code>View</code></p>
+<p>好了，概念一句话说完了，来看看什么情况下用 <code>Redux</code></p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-25-11-39-21.png" alt="斗鱼界面"></p>
+<p>这个界面，如果用 <code>React</code> 来实现，在底部的 <code>容器组件</code> 要处理的业务有: 用户登录、弹幕、主播信息、视频进度、道具、打赏、IM聊天、等等还有很多 而且随着产品迭代，功能只会多</p>
+<p>按我们之前的组件拆分，结构是合理，但是这个数据管理麻烦了，各种业务数据压入子组件，各种业务事件返回到主容器组件，可能的代码结构如下</p>
+<pre><code class="js">// 状态
+this.state = {
+  data1:...,
+  data2:...,
+  data3:...,
+  data...n:...
 }
-</code></pre>
-<ul>
-<li>配置插件 <code>/config/config.default.js</code></li>
-</ul>
-<pre><code class="js">// add your config here
-config.middleware = [&#39;graphql&#39;]
 
-// graphql
-config.graphql = {
-  router: &#39;/graphql&#39;,
-  // 是否加载到 app 上，默认开启
-  app: true,
-  // 是否加载到 agent 上，默认关闭
-  agent: false,
-  // 是否加载开发者工具 graphiql, 默认开启。路由同 router 字段。使用浏览器打开该可见。
-  graphiql: true,
-  // graphQL 路由前的拦截器
-  onPreGraphQL: function* (ctx) {},
-  // 开发工具 graphiQL 路由前的拦截器，建议用于做权限操作(如只提供开发者使用)
-  onPreGraphiQL: function* (ctx) {},
-}
+// 事件
+function handelEvent1 = {...}
+function handelEvent2 = {...}
+function handelEvent3 = {...}
+function handelEvent...n = {...}
+
+// JSX
+&lt;主视图组件&gt;
+  &lt;用户信息 data1={this.state.data1} handleEven1={...} handleEven2={...} handleEven...n={...} /&gt;
+  &lt;主播信息&gt;
+    &lt;基础资料 data...n={...} handleEven...n={...} /&gt;
+    &lt;头像 data...n={...} handleEven...n={... /&gt;
+    &lt;关注 data...n={...} handleEven...n={... /&gt;
+    &lt;标签 data...n={...} handleEven...n={... /&gt;
+    &lt;热度 data...n={...} handleEven...n={... /&gt;
+    ...
+  &lt;/主播信息&gt;
+  &lt;播放器 ...&gt;
+    &lt;... /&gt;
+    ...
+  &lt;播放器&gt;
+    ...
+  &lt;...播放器/&gt;
+  ...
+&lt;/主视图组件&gt;
 </code></pre>
-<h3 id="2-egg-graphql-代码结构"><a href="#2-egg-graphql-代码结构" class="headerlink" title="2 egg-graphql 代码结构"></a>2 <code>egg-graphql</code> 代码结构</h3><pre><code class="bash">.
-├── graphql                       | graphql 代码
-│   ├── common                    | 通用类型定义
-│   │   ├── resolver.js           | 合并所有全局类型定义
-│   │   ├── scalars               | 自定义类型定义
-│   │   │   └── date.js           | 日期类型实现
-│   │   └── schema.graphql        | schema 定义
-│   ├── mutation                  | 所有的更新
-│   │   └── schema.graphql        | schema 定义
-│   ├── query                     | 所有的查询
-│   │   └── schema.graphql        | schema 定义
-│   └── user                      | 用户业务
-│       ├── connector.js          | 连接数据服务
-│       ├── resolver.js           | 类型实现
-│       └── schema.graphql        | schema 定义
+<p><strong>会发现组件套组件，父父子子的，完全没法维护了，梳理这些关系就很费时间，而且容易错误</strong></p>
+<p><code>Redux</code> 就是来解决这个问题的，每个组件只要执行自己的 <code>Action</code> ，不用返回到父容器</p>
+<ul>
+<li><code>Redux</code> 在弹幕业务中就两步：<ol>
+<li><code>弹幕发出组件</code> 执行发出弹幕动作 <code>Action</code> 内容 <code>{ type: &#39;BARRAGE_SEND&#39;, text: &#39;弹幕消息&#39; }</code></li>
+<li><code>弹幕滚动组件</code> 新弹幕数据被更新到弹幕滚动组件</li>
+</ol>
+</li>
+</ul>
+<p>但是也不好滥用，我看到有些简单的 表单操作，竟然也套了 <code>Redux</code> ，完全没必要，自己把握吧</p>
+<h2 id="动手创建一个-redux-应用"><a href="#动手创建一个-redux-应用" class="headerlink" title="动手创建一个 redux 应用"></a>动手创建一个 redux 应用</h2><p>来个经典例子 <code>todo</code> , 原版 <a href="https://redux.js.org/basics/example-todo-list" target="_blank" rel="noopener">Todo</a> , 我这里是精简版，那么我们开始</p>
+<ul>
+<li>动图效果</li>
+</ul>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/react-redux-todo.gif" alt="react-redux-todo"></p>
+<ul>
+<li>组件结构</li>
+</ul>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-25-13-40-15.png" alt="todo 组件结构"></p>
+<h3 id="第一步-编写-Action"><a href="#第一步-编写-Action" class="headerlink" title="第一步: 编写 Action"></a>第一步: 编写 Action</h3><p>界面上产生的操作</p>
+<pre><code class="js">let nextTodoId = 0
+
+export const addTodo = text =&gt; ({
+  type: &#39;ADD_TODO&#39;,
+  id: nextTodoId++,
+  text
+})
+
+export const toggleTodo = id =&gt; ({
+  type: &#39;TOGGLE_TODO&#39;,
+  id
+})
 </code></pre>
 <ul>
-<li>graphql 目录下，有 <strong>4</strong> 种代码<ul>
-<li>1 <code>common</code> 全局类型定义</li>
-<li>2 <code>query</code> 查询代码</li>
-<li>3 <code>mutation</code> 更新操作代码</li>
-<li>4 <code>业务</code> 实现代码<ul>
-<li>4.1 <code>connector</code> 连接数据服务</li>
-<li>4.2 <code>resolver</code> 类型实现</li>
-<li>4.3 <code>schema</code> 定义</li>
+<li>事件的格式<ul>
+<li><code>type</code> 字段必须有，表示做什么操作</li>
+<li><code>type</code> 值全局唯一</li>
+<li><code>type</code> 大写定义</li>
+<li>其它字段自由定义</li>
 </ul>
 </li>
 </ul>
-</li>
+<h3 id="第二步-编写-Reducers"><a href="#第二步-编写-Reducers" class="headerlink" title="第二步: 编写 Reducers"></a>第二步: 编写 Reducers</h3><p>事件对应的响应处理，处理完后返回新 <code>state</code></p>
+<pre><code class="js">const todos = (state = [], action) =&gt; {
+  switch (action.type) {
+    case &#39;ADD_TODO&#39;:
+      return [
+        ...state,
+        {
+          id: action.id,
+          text: action.text,
+          completed: false
+        }
+      ]
+    case &#39;TOGGLE_TODO&#39;:
+      return state.map(
+        todo =&gt;
+          todo.id === action.id ? {...todo, completed: !todo.completed} : todo
+      )
+    default:
+      return state
+  }
+}
+
+export default todos
+</code></pre>
+<h3 id="第三步-合并-Reducers"><a href="#第三步-合并-Reducers" class="headerlink" title="第三步: 合并 Reducers"></a>第三步: 合并 Reducers</h3><p>使用 <code>combineReducers</code> 合并所有的处理过程</p>
+<pre><code class="js">import { combineReducers } from &#39;redux&#39;
+import todos from &#39;./todos&#39;
+
+export default combineReducers({
+  todos
+})
+</code></pre>
+<p>假设你有其它业务, 如: 用户 <code>user</code> , 购物车 <code>cart</code></p>
+<pre><code class="js">import { combineReducers } from &#39;redux&#39;
+import todos from &#39;./todos&#39;
+import user from &#39;./user&#39;
+import cart from &#39;./cart&#39;
+
+export default combineReducers({
+  todos,
+  user,
+  cart
+})
+</code></pre>
+<h3 id="第四步-编写组件-AddTodo"><a href="#第四步-编写组件-AddTodo" class="headerlink" title="第四步: 编写组件 AddTodo"></a>第四步: 编写组件 <code>AddTodo</code></h3><ul>
+<li>使用 <code>connect</code> 连接组件</li>
+<li>使用 <code>dispatch</code> 方法派发事件</li>
 </ul>
-<h3 id="3-编写-common-全局类型"><a href="#3-编写-common-全局类型" class="headerlink" title="3 编写 common 全局类型"></a>3 编写 <code>common</code> 全局类型</h3><ul>
-<li>1 <code>common/schema.graphql</code></li>
+<pre><code class="js">import React from &#39;react&#39;
+import { connect } from &#39;react-redux&#39;
+import { addTodo } from &#39;../redux/actions&#39;
+
+const AddTodo = ({ dispatch }) =&gt; {
+  let input
+
+  return (
+    &lt;div&gt;
+      &lt;form onSubmit={e =&gt; {
+        e.preventDefault()
+        if (!input.value.trim()) {
+          return
+        }
+        dispatch(addTodo(input.value))
+        input.value = &#39;&#39;
+      }}&gt;
+        &lt;input ref={node =&gt; input = node} /&gt;
+        &lt;button type=&quot;submit&quot;&gt;
+          Add Todo
+        &lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default connect()(AddTodo)
+</code></pre>
+<p><code>dispatch(addTodo(input.value))</code> 就发动了 <code>Redux</code> 到 <code>Reducers</code> , 这时 <code>state</code> 更新了</p>
+<h3 id="第五步-编写组件-TodoList"><a href="#第五步-编写组件-TodoList" class="headerlink" title="第五步: 编写组件 TodoList"></a>第五步: 编写组件 <code>TodoList</code></h3><p>再来个稍微复杂的</p>
+<pre><code class="js">import React from &#39;react&#39;
+import {connect} from &#39;react-redux&#39;
+import {toggleTodo} from &#39;../redux/actions&#39;
+
+const Todo = ({onClick, completed, text}) =&gt; (
+  &lt;li
+    onClick={onClick}
+    style={{
+      textDecoration: completed ? 'line-through' : 'none'
+    }}
+  &gt;
+    {text}
+  &lt;/li&gt;
+)
+
+const TodoList = ({todos, toggleTodo}) =&gt; (
+  &lt;ul&gt;
+    {todos.map(todo =&gt; (
+      &lt;Todo key={todo.id} {...todo} onClick={() =&gt; toggleTodo(todo.id)} /&gt;
+    ))}
+  &lt;/ul&gt;
+)
+
+const mapStateToProps = state =&gt; ({
+  todos: state.todos
+})
+
+const mapDispatchToProps = dispatch =&gt; ({
+  toggleTodo: id =&gt; dispatch(toggleTodo(id))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList)
+
+</code></pre>
+<p>还是 <code>connect</code> 方法 , 这里重点讲下</p>
+<p>先看看官方定义 <a href="https://github.com/reduxjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options" target="_blank" rel="noopener">connect()</a></p>
+<ul>
+<li>定义</li>
 </ul>
-<pre><code class="js">scalar Date
+<pre><code class="js">connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])
 </code></pre>
 <ul>
-<li>2 <code>common/scalars/date.js</code></li>
+<li>参数</li>
 </ul>
-<pre><code class="js">const { GraphQLScalarType } = require(&#39;graphql&#39;);
-const { Kind } = require(&#39;graphql/language&#39;);
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mapStateToProps</td>
+<td><code>store</code> 绑定 <code>state</code> , 做更新的需要传入</td>
+</tr>
+<tr>
+<td>mapDispatchToProps</td>
+<td>绑定派发事件 <code>event</code> , 不传的话默认 <code>dispatch</code> 对象, 就像上面的 <code>AddTodo</code> 组件</td>
+</tr>
+<tr>
+<td>mergeProps</td>
+<td><code>[mergeProps(stateProps, dispatchProps, ownProps): props] (Function):</code> 合并属性自定义，自己不传的话默认 <code>·Object.assign</code> ，我也是放空默认的</td>
+</tr>
+<tr>
+<td>options</td>
+<td>一些选项，我没怎么在意，知道有就行</td>
+</tr>
+</tbody>
+</table>
+<p><code>[mapStateToProps], [mapDispatchToProps]</code> 这两个用到的多，大家自己练习下</p>
+<h3 id="第六步-容器组件"><a href="#第六步-容器组件" class="headerlink" title="第六步: 容器组件"></a>第六步: 容器组件</h3><pre><code class="js">import React from &#39;react&#39;
+import AddTodo from &#39;./AddTodo&#39;
+import TodoList from &#39;./TodoList&#39;
 
-module.exports = new GraphQLScalarType({
-  name: &#39;Date&#39;,
-  description: &#39;Date custom scalar type&#39;,
-  parseValue(value) {
-    return new Date(value);
-  },
-  serialize(value) {
-    return value.getTime();
-  },
-  parseLiteral(ast) {
-    if (ast.kind === Kind.INT) {
-      return parseInt(ast.value, 10);
-    }
-    return null;
-  },
-});
+const App = () =&gt; (
+  &lt;div&gt;
+    &lt;AddTodo /&gt;
+    &lt;TodoList /&gt;
+  &lt;/div&gt;
+)
+
+export default App
 </code></pre>
-<ul>
-<li>3 <code>common/resolver.js</code></li>
-</ul>
-<pre><code class="js">module.exports = {
-  Date: require(&#39;./scalars/date&#39;), // eslint-disable-line
-};
-</code></pre>
-<blockquote>
-<p>在 <code>egg node</code> 下还是用 <code>require</code> ，如果语言偏好用 <code>import</code> 会损失转换性能，不推荐</p>
-</blockquote>
-<h3 id="4-编写-user-业务"><a href="#4-编写-user-业务" class="headerlink" title="4 编写 user 业务"></a>4 编写 <code>user</code> 业务</h3><ul>
-<li><code>user/schema.graphql</code></li>
-</ul>
-<pre><code class="js"># 用户
-type User {
-  # 流水号
-  id: ID!
-  # 用户名
-  name: String!
-  # token
-  token: String
-}
-</code></pre>
-<ul>
-<li><code>user/connector.js</code></li>
-</ul>
-<pre><code class="js">&#39;use strict&#39;
+<p>这里简单，并列排放</p>
+<h3 id="最后-适配-App"><a href="#最后-适配-App" class="headerlink" title="最后: 适配 App"></a>最后: 适配 <code>App</code></h3><pre><code class="js">import React, {Component} from &#39;react&#39;
+import {createStore} from &#39;redux&#39;
+import {Provider} from &#39;react-redux&#39;
+import TodoApp from &#39;./todos/components/App&#39;
+import todoReducer from &#39;./todos/redux/reducers&#39;
 
-const DataLoader = require(&#39;dataloader&#39;)
+const store = createStore(todoReducer)
 
-class UserConnector {
-  constructor(ctx) {
-    this.ctx = ctx
-    this.loader = new DataLoader(this.fetch.bind(this))
-  }
-
-  fetch(id) {
-    const user = this.ctx.service.user
-    return new Promise(function(resolve, reject) {
-      const users = user.findById(id)
-      resolve(users)
-    })
-  }
-
-  fetchById(id) {
-    return this.loader.load(id)
-  }
-
-  // 用户登录
-  fetchByNamePassword(username, password) {
-    let user = this.ctx.service.user.findByUsernamePassword(username, password)
-    return user
-  }
-
-  // 用户列表
-  fetchAll() {
-    let user = this.ctx.service.user.findAll()
-    return user
-  }
-
-  // 用户删除
-  removeOne(id) {
-    let user = this.ctx.service.user.removeUser(id)
-    return user
-  }
-
-}
-
-module.exports = UserConnector
-</code></pre>
-<blockquote>
-<p><code>dataloader</code> 是 <code>facebook</code> 出品的数据请求缓存 解决 <code>N+1</code> 问题</p>
-</blockquote>
-<ul>
-<li><code>user/resolver.js</code></li>
-</ul>
-<pre><code class="js">&#39;use strict&#39;
-
-module.exports = {
-  Query: {
-    user(root, {username, password}, ctx) {
-      return ctx.connector.user.fetchByNamePassword(username, password)
-    },
-    users(root, {}, ctx) {
-      return ctx.connector.user.fetchAll()
-    }
-  },
-  Mutation: {
-    removeUser(root, { id }, ctx) {
-      return ctx.connector.user.removeOne(id)
-    },
-  }
-}
-</code></pre>
-<h3 id="5-编写-query-查询"><a href="#5-编写-query-查询" class="headerlink" title="5 编写 query 查询"></a>5 编写 <code>query</code> 查询</h3><ul>
-<li><code>query/schema.graphql</code></li>
-</ul>
-<pre><code class="js">type Query {
-  # 用户登录
-  user(
-    # 用户名
-    username: String!,
-    # 密码
-    password: String!
-    ): User
-  # 用户列表
-  users: [User!]
-}
-</code></pre>
-<h3 id="6-编写-mutation-更新"><a href="#6-编写-mutation-更新" class="headerlink" title="6 编写 mutation 更新"></a>6 编写 <code>mutation</code> 更新</h3><ul>
-<li><code>mutation/schema.graphql</code></li>
-</ul>
-<pre><code class="js">type Mutation {
-
-  # User
-  # 删除用户
-  removeUser (
-    # 用户ID
-    id: ID!): User
-}
-
-</code></pre>
-<h3 id="7-开启-cros-跨域访问"><a href="#7-开启-cros-跨域访问" class="headerlink" title="7 开启 cros 跨域访问"></a>7 开启 <code>cros</code> 跨域访问</h3><ul>
-<li><code>config/plugin.js</code></li>
-</ul>
-<pre><code class="js">exports.cors = {
-  enable: true,
-  package: &#39;egg-cors&#39;
-}
-</code></pre>
-<ul>
-<li><code>config/config.default.js</code></li>
-</ul>
-<pre><code class="js">// cors
-config.cors = {
-  origin: &#39;*&#39;,
-  allowMethods: &#39;GET,HEAD,PUT,POST,DELETE,PATCH&#39;
-}
-// csrf
-config.security = {
-  csrf: {
-    ignore: () =&gt; true
-  }
-}
-</code></pre>
-<blockquote>
-<p>作为 <code>API</code> 服务，顺手把 <code>csrf</code> 关掉</p>
-</blockquote>
-<h3 id="8-编写数据服务-jwt-授权"><a href="#8-编写数据服务-jwt-授权" class="headerlink" title="8 编写数据服务 jwt 授权"></a>8 编写数据服务 <code>jwt</code> 授权</h3><ul>
-<li>配置 <code>config/config.default.js</code></li>
-</ul>
-<pre><code class="js">// easy-mock 模拟数据地址
-config.baseURL =
-  &#39;https://www.easy-mock.com/mock/59801fd8a1d30433d84f198c/example&#39;
-
-// jwt
-config.jwt = {
-  jwtSecret: &#39;shared-secret&#39;,
-  jwtExpire: &#39;14 days&#39;,
-  WhiteList: [&#39;UserLogin&#39;]
-}
-</code></pre>
-<ul>
-<li>数据请求封装 <code>util/request.js</code></li>
-</ul>
-<pre><code class="js">&#39;use strict&#39;
-
-const _options = {
-  dataType: &#39;json&#39;,
-  timeout: 30000
-}
-
-module.exports = {
-
-  createAPI: (_this, url, method, data) =&gt; {
-    let options = {
-      ..._options,
-      method,
-      data
-    }
-    return _this.ctx.curl(
-      `${_this.config.baseURL}${url}`,
-      options
+class BaseRedux extends Component {
+  render() {
+    return (
+      &lt;Provider store={store}&gt;
+        &lt;TodoApp /&gt;
+      &lt;/Provider&gt;
     )
   }
 }
+
+export default BaseRedux
 </code></pre>
 <ul>
-<li>用户数据服务 <code>service/user.js</code></li>
+<li>标准代码格式<ol>
+<li><code>createStore(reducers)</code> 创建 <code>store</code></li>
+<li><code>Provider</code> 适配器压入 <code>store</code> 对象, 子节点都受 <code>Redux</code> 控制</li>
+</ol>
+</li>
 </ul>
-<pre><code class="js">const Service = require(&#39;egg&#39;).Service
-const {createAPI} = require(&#39;../util/request&#39;)
-const jwt = require(&#39;jsonwebtoken&#39;)
-
-class UserService extends Service {
-
-  // 用户详情
-  async findById(id) {
-    const result = await createAPI(this, &#39;/user&#39;, &#39;get&#39;, {
-      id
-    })
-    return result.data
-  }
-
-  // 用户列表
-  async findAll() {
-    const result = await createAPI(this, &#39;/user/all&#39;, &#39;get&#39;, {})
-    return result.data
-  }
-
-  // 用户登录、jwt token
-  async findByUsernamePassword(username, password) {
-    const result = await createAPI(this, &#39;/user/login&#39;, &#39;post&#39;, {
-      username,
-      password
-    })
-    let user = result.data
-    user.token = jwt.sign({uid: user.id}, this.config.jwt.jwtSecret, {
-      expiresIn: this.config.jwt.jwtExpire
-    })
-    return user
-  }
-
-  // 用户删除
-  async removeUser(id) {
-    const result = await createAPI(this, &#39;/user&#39;, &#39;delete&#39;, {
-      id
-    })
-    return result.data
-  }
-}
-
-module.exports = UserService
+<h2 id="调试工具-Redux-DevTools-extension"><a href="#调试工具-Redux-DevTools-extension" class="headerlink" title="调试工具 Redux DevTools extension"></a>调试工具 <code>Redux DevTools extension</code></h2><p>动图效果</p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/react-redux-dev-tools.gif" alt="Redux DevTools extension"></p>
+<h3 id="1-安装-chrome-插件"><a href="#1-安装-chrome-插件" class="headerlink" title="1. 安装 chrome 插件"></a>1. 安装 chrome 插件</h3><p>打开 <a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd" target="_blank" rel="noopener">redux-devtools</a></p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-25-15-13-59.png" alt="redux-devtools"></p>
+<h3 id="2-配置代码"><a href="#2-配置代码" class="headerlink" title="2. 配置代码"></a>2. 配置代码</h3><pre><code class="js">const store = createStore(
+  todoReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 </code></pre>
-<h3 id="9-token-验证中间件"><a href="#9-token-验证中间件" class="headerlink" title="9 token 验证中间件"></a>9 <code>token</code> 验证中间件</h3><ul>
-<li>配置  <code>config/config.default.js</code></li>
+<p><code>createStore</code> 时加入 <code>window.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; window.__REDUX_DEVTOOLS_EXTENSION__()</code></p>
+<h3 id="3-开启插件"><a href="#3-开启插件" class="headerlink" title="3. 开启插件"></a>3. 开启插件</h3><p>打开 <code>chrome</code> 调试工具，点击面板 <code>Redux</code></p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-25-15-20-29.png" alt="chrome-tab-Redux"></p>
+<h2 id="codepen"><a href="#codepen" class="headerlink" title="codepen"></a>codepen</h2><p><a href="https://codepen.io/ducafecat/pen/RyBEeK" target="_blank" rel="noopener">https://codepen.io/ducafecat/pen/RyBEeK</a></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li><a href="https://github.com/ducafecat/reactjs-example/blob/master/src/base/6-redux.js" target="_blank" rel="noopener">reactjs-example / 6-redux.js</a></li>
 </ul>
-<pre><code class="js">config.middleware = [&#39;auth&#39;, &#39;graphql&#39;]
-
-config.bodyParser = {
-  enable: true,
-  jsonLimit: &#39;10mb&#39;
-}
-</code></pre>
-<blockquote>
-<p>开启内置 <code>bodyParser</code> 服务</p>
-</blockquote>
-<ul>
-<li>编写 <code>middleware/auth.js</code></li>
-</ul>
-<pre><code class="js">const jwt = require(&#39;jsonwebtoken&#39;)
-
-module.exports = options =&gt; {
-  return async function auth(ctx, next) {
-    // 开启 GraphiQL IDE 调试时，所有的请求放过
-    if (ctx.app.config.graphql.graphiql) {
-      await next()
-      return
-    }
-    const body = ctx.request.body
-    if (body.operationName !== &#39;UserLogin&#39;) {
-      let token = ctx.request.header[&#39;authorization&#39;]
-      if (token === undefined) {
-        ctx.body = {message: &#39;令牌为空，请登陆获取！&#39;}
-        ctx.status = 401
-        return
-      }
-      token = token.replace(/^Bearer\s/, &#39;&#39;)
-      try {
-        let decoded = jwt.verify(token, ctx.app.config.jwt.jwtSecret, {
-          expiresIn: ctx.app.config.jwt.jwtExpire
-        })
-        await next()
-      } catch (err) {
-        ctx.body = {message: &#39;访问令牌鉴权无效，请重新登陆获取！&#39;}
-        ctx.status = 401
-      }
-    } else {
-      await next()
-    }
-  }
-}
-</code></pre>
-<blockquote>
-<p>如果开启 <code>GraphiQL IDE</code> 工具，<code>token</code> 验证将失效，令牌数据是写在 <code>request.header[authorization]</code>，这个调试 <code>IDE</code> 不支持设置 <code>header</code></p>
-</blockquote>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><h3 id="1-文章"><a href="#1-文章" class="headerlink" title="1 文章"></a>1 文章</h3><ul>
-<li><a href="https://github.com/koajs/koa" target="_blank" rel="noopener">Koa2 手册</a></li>
-<li><a href="https://eggjs.org/zh-cn/" target="_blank" rel="noopener">eggjs 手册</a></li>
-<li><a href="https://graphql.org/graphql-js/authentication-and-express-middleware/" target="_blank" rel="noopener">graphql-js/Authentication and Express Middleware</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/30604868" target="_blank" rel="noopener">Egg/GraphQL</a></li>
-<li><a href="http://facebook.github.io/graphql/October2016/" target="_blank" rel="noopener">facebook/GraphQL</a></li>
-<li><a href="https://www.apollographql.com/" target="_blank" rel="noopener">apollo-graphql</a></li>
-<li><a href="https://developer.github.com/v4/" target="_blank" rel="noopener">GraphQL API v4</a></li>
-<li><a href="https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql" target="_blank" rel="noopener">github/authenticating-with-graphql</a></li>
-</ul>
-<h3 id="2-组件"><a href="#2-组件" class="headerlink" title="2 组件"></a>2 组件</h3><ul>
-<li><a href="https://github.com/eggjs/egg-graphql" target="_blank" rel="noopener">eggjs/egg-graphql</a></li>
-<li><a href="https://github.com/eggjs/egg-cors" target="_blank" rel="noopener">eggjs/egg-cors</a></li>
-<li><a href="https://github.com/facebook/dataloader" target="_blank" rel="noopener">facebook/dataloader</a></li>
-<li><a href="https://github.com/koajs/cors" target="_blank" rel="noopener">koajs/cors</a></li>
-<li><a href="https://github.com/Akryum/vue-apollo" target="_blank" rel="noopener">vue-apollo</a></li>
-<li><a href="https://www.npmjs.com/package/apollo-client" target="_blank" rel="noopener">apollo-client</a></li>
-<li><a href="https://github.com/auth0/node-jsonwebtoken" target="_blank" rel="noopener">jsonwebtoken</a></li>
-<li><a href="https://github.com/Akryum/vue-apollo/issues/144" target="_blank" rel="noopener">ApolloLink Set headers</a></li>
-<li><a href="https://github.com/ElemeFE/element" target="_blank" rel="noopener">element-ui</a></li>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://redux.js.org/" target="_blank" rel="noopener">redux 官网</a></li>
+<li><a href="https://facebook.github.io/flux/" target="_blank" rel="noopener">flux 官网</a></li>
+<li><a href="https://egghead.io/courses/getting-started-with-redux" target="_blank" rel="noopener">Getting Started with Redux 视频</a></li>
+<li><a href="https://egghead.io/courses/building-react-applications-with-idiomatic-redux" target="_blank" rel="noopener">Building React Applications with Idiomatic Redux 视频</a></li>
+<li><a href="http://www.redux.org.cn/" target="_blank" rel="noopener">Redux 中文文档</a></li>
+<li><a href="https://redux.js.org/basics/example-todo-list" target="_blank" rel="noopener">Example: Todo List</a></li>
+<li><a href="http://extension.remotedev.io/" target="_blank" rel="noopener">Redux DevTools extension</a></li>
+<li><a href="https://github.com/zalmoxisus/redux-devtools-extension" target="_blank" rel="noopener">zalmoxisus/redux-devtools-extension</a></li>
 </ul>
 
         
@@ -919,21 +825,13 @@ module.exports = options =&gt; {
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/05/07/09-graphql-apollo-client-vue/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/04/28/07-graphql-modularizing-the-schema/" id="post_nav-older" class="next-content">
+        <a href="/2018/05/24/07-react-fast-router/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
