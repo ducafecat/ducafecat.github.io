@@ -43,7 +43,7 @@
     
     <title>
         
-            React 快速上手 - 01 前言 | 
+            React 快速上手 - 09 数据请求 fetch | 
         
         东西
     </title>
@@ -220,7 +220,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="东西">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/05/16/01-react-fast-readme/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/05/27/09-react-fast-fetch/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="东西">
@@ -235,16 +235,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/05/16/01-react-fast-readme/">
+    <meta property="og:url" content="http://yoursite.com/2018/05/27/09-react-fast-fetch/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="React 快速上手 - 01 前言 | 东西">
+    <meta property="og:title" content="React 快速上手 - 09 数据请求 fetch | 东西">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
     <meta property="og:article:tag" content="react"> 
 
     
-        <meta property="article:published_time" content="Wed May 16 2018 15:24:59 GMT+0800">
-        <meta property="article:modified_time" content="Sun May 27 2018 14:20:18 GMT+0800">
+        <meta property="article:published_time" content="Sun May 27 2018 08:45:53 GMT+0800">
+        <meta property="article:modified_time" content="Sun May 27 2018 16:19:38 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -252,7 +252,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/05/16/01-react-fast-readme/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/05/27/09-react-fast-fetch/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -264,10 +264,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/05/16/01-react-fast-readme/index.html",
-    "headline": "React 快速上手 - 01 前言",
-    "datePublished": "Wed May 16 2018 15:24:59 GMT+0800",
-    "dateModified": "Sun May 27 2018 14:20:18 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/05/27/09-react-fast-fetch/index.html",
+    "headline": "React 快速上手 - 09 数据请求 fetch",
+    "datePublished": "Sun May 27 2018 08:45:53 GMT+0800",
+    "dateModified": "Sun May 27 2018 16:19:38 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "会煮咖啡的猫",
@@ -351,7 +351,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#React-快速上手-01-前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">React 快速上手 - 01 前言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目的"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">目的</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#阅读技术要求"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">阅读技术要求</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#软件环境"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">软件环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#编写计划"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">编写计划</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#React-快速上手-09-数据请求-fetch"><span class="post-toc-number">1.</span> <span class="post-toc-text">React 快速上手 - 09 数据请求 fetch</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">目标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-fetch-基础使用"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">1 fetch 基础使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-数据结构"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">1.1 数据结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-读取"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">1.2 读取</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-打印"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">1.3 打印</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-fetch-配置"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">2 fetch 配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-form-提交"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">2.1 form 提交</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-1-定义-Headers-请求头协议说明"><span class="post-toc-number">1.4.1.1.</span> <span class="post-toc-text">2.1.1 定义 Headers 请求头协议说明</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-2-定义-init-配置"><span class="post-toc-number">1.4.1.2.</span> <span class="post-toc-text">2.1.2 定义 init 配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-3-请求提交"><span class="post-toc-number">1.4.1.3.</span> <span class="post-toc-text">2.1.3 请求提交</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-raw-提交"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">2.2 raw 提交</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-1-定义-Headers"><span class="post-toc-number">1.4.2.1.</span> <span class="post-toc-text">2.2.1 定义 Headers</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-2-定义-init"><span class="post-toc-number">1.4.2.2.</span> <span class="post-toc-text">2.2.2 定义 init</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-3-请求提交"><span class="post-toc-number">1.4.2.3.</span> <span class="post-toc-text">2.2.3 请求提交</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-完整例子"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">2.3 完整例子</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-fetch-同步-async-wait"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">3 fetch 同步 async / wait</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-同步写法"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">3.1 同步写法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-完成例子"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">3.2 完成例子</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-fetch-兼容性"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">4 fetch 兼容性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-cross-fetch-组件"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">5 cross-fetch 组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-介绍"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">5.1 介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-多平台支持"><span class="post-toc-number">1.7.2.</span> <span class="post-toc-text">5.2 多平台支持</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-3-包研究"><span class="post-toc-number">1.7.3.</span> <span class="post-toc-text">5.3 包研究</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-4-例子"><span class="post-toc-number">1.7.4.</span> <span class="post-toc-text">5.4 例子</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">参考</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -374,7 +374,7 @@
         <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://oflimcy5e.bkt.clouddn.com/reactjs-logo-2.jpeg)">
     
             <p class="article-headline-p">
-                React 快速上手 - 01 前言
+                React 快速上手 - 09 数据请求 fetch
             </p>
         </div>
 
@@ -393,7 +393,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>会煮咖啡的猫</strong>
-        <span>5月 16, 2018</span>
+        <span>5月 27, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -434,7 +434,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=React 快速上手 - 01 前言&url=http://yoursite.com/2018/05/16/01-react-fast-readme/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=React 快速上手 - 09 数据请求 fetch&url=http://yoursite.com/2018/05/27/09-react-fast-fetch/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -443,7 +443,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=React 快速上手 - 01 前言&url=http://yoursite.com/2018/05/16/01-react-fast-readme/index.html&via=会煮咖啡的猫" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=React 快速上手 - 09 数据请求 fetch&url=http://yoursite.com/2018/05/27/09-react-fast-fetch/index.html&via=会煮咖啡的猫" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -452,7 +452,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/16/01-react-fast-readme/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/27/09-react-fast-fetch/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -461,7 +461,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/16/01-react-fast-readme/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/27/09-react-fast-fetch/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -486,38 +486,444 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="React-快速上手-01-前言"><a href="#React-快速上手-01-前言" class="headerlink" title="React 快速上手 - 01 前言"></a>React 快速上手 - 01 前言</h1><h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><ul>
-<li>通过精简的示例代码，让你直观感受 <code>react</code> 特性</li>
-<li>让没接触过 <code>react</code> 的 <code>前端</code> <code>后端</code> 人员快速上手</li>
+        <h1 id="React-快速上手-09-数据请求-fetch"><a href="#React-快速上手-09-数据请求-fetch" class="headerlink" title="React 快速上手 - 09 数据请求 fetch"></a>React 快速上手 - 09 数据请求 fetch</h1><p>本文重点在 <code>fetch</code> 基础使用、配置、实战，如果你很熟练了，可以直接 pass</p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>掌握 <code>fetch</code> 使用<ul>
+<li>基础使用</li>
+<li>详细配置</li>
+<li>同步请求</li>
+<li>跨平台 cross-fetch</li>
+</ul>
+</li>
+</ul>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>react 16.3.2</li>
+<li>fetch 内置</li>
+<li>cross-fetch 2.2.0</li>
+</ul>
+<h2 id="1-fetch-基础使用"><a href="#1-fetch-基础使用" class="headerlink" title="1 fetch 基础使用"></a>1 fetch 基础使用</h2><h3 id="1-1-数据结构"><a href="#1-1-数据结构" class="headerlink" title="1.1 数据结构"></a>1.1 数据结构</h3><p>我在 <code>easy-mock</code> 上准备了模拟数据</p>
+<p><a href="https://www.easy-mock.com/mock/59801fd8a1d30433d84f198c/example/user/all" target="_blank" rel="noopener">https://www.easy-mock.com/mock/59801fd8a1d30433d84f198c/example/user/all</a></p>
+<pre><code class="json">[
+  {
+    &quot;id&quot;: &quot;610000200102261253&quot;,
+    &quot;name&quot;: &quot;薛洋&quot;
+  },
+  {
+    &quot;id&quot;: &quot;350000199603020600&quot;,
+    &quot;name&quot;: &quot;许磊&quot;
+  },
+  {
+    &quot;id&quot;: &quot;310000198105081812&quot;,
+    &quot;name&quot;: &quot;崔娟&quot;
+  },
+  {
+    &quot;id&quot;: &quot;820000197101010860&quot;,
+    &quot;name&quot;: &quot;石霞&quot;
+  }
+]
+</code></pre>
+<p>一个列表，两个字段 <code>id</code> <code>name</code></p>
+<h3 id="1-2-读取"><a href="#1-2-读取" class="headerlink" title="1.2 读取"></a>1.2 读取</h3><pre><code class="js">  fetch(
+    &#39;https://www.easy-mock.com/mock/59801fd8a1d30433d84f198c/example/user/all&#39;
+  )
+    .then(res =&gt; res.json())
+    .then(data =&gt; {
+      console.log(data)
+      this.setState({users: data})
+    })
+    .catch(e =&gt; console.log(&#39;错误:&#39;, e))
+</code></pre>
+<p><code>fetch</code> 是浏览器内置对象，所以我们不用安装包，直接使用</p>
+<ul>
+<li>使用流程<ul>
+<li>fetch …</li>
+<li>then =&gt; res.json()</li>
+<li>then =&gt; data</li>
+</ul>
+</li>
 </ul>
 <blockquote>
-<p>我认为对于初学者，过多的信息知识是一种干扰、是阻碍踏出学习的第一步，比如讲 <code>redux</code> 我不会过多讲过多的预备知识，而是通过分析代码的方式</p>
-<p>希望大家一开始先通过模仿代码来体会（就是自己敲一遍代码），而不是一开始就去关注背后的知识，比如什么 <code>mvvm</code> <code>双向绑定</code> <code>flux</code> 等等，这些随着时间推移你都会遇到的，但不是现在</p>
+<p>注意需要执行一次 <code>res.json()</code> 方法才能获取数据</p>
 </blockquote>
-<h2 id="阅读技术要求"><a href="#阅读技术要求" class="headerlink" title="阅读技术要求"></a>阅读技术要求</h2><ul>
-<li>熟悉 <code>js、css、html</code> 语法，文中不再进行语法使用说明</li>
-<li>内容偏向于企业一线 相关知识点要求会有一定起伏</li>
-</ul>
-<h2 id="软件环境"><a href="#软件环境" class="headerlink" title="软件环境"></a>软件环境</h2><p>环境都是用的最新稳定版本</p>
+<h3 id="1-3-打印"><a href="#1-3-打印" class="headerlink" title="1.3 打印"></a>1.3 打印</h3><p>我们获取数据后，设置 <code>state</code> ，然后正常数据 <code>render</code> 就行，完整代码</p>
+<pre><code class="js">import React, {Component} from &#39;react&#39;
+
+class RequestView extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {users: []}
+    this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick() {
+    fetch(
+      &#39;https://www.easy-mock.com/mock/59801fd8a1d30433d84f198c/example/user/all&#39;
+    )
+      .then(res =&gt; res.json())
+      .then(data =&gt; {
+        console.log(data)
+        this.setState({users: data})
+      })
+      .catch(e =&gt; console.log(&#39;错误:&#39;, e))
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;input type=&quot;button&quot; value=&quot;点击 http-get 方式获取数据&quot; onClickCapture={this.handleClick} /&gt;
+        &lt;ul&gt;
+          {this.state.users &amp;&amp;
+            this.state.users.map((item, index) =&gt; (
+              &lt;li key={index.toString()}&gt;{item.name}&lt;/li&gt;
+            ))}
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+</code></pre>
+<p>打印</p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-27-14-26-28.png" alt="fetch"></p>
 <ul>
-<li>react 16</li>
-<li>react-router 4</li>
-<li>react-redux 5</li>
+<li>codepen</li>
 </ul>
-<h2 id="编写计划"><a href="#编写计划" class="headerlink" title="编写计划"></a>编写计划</h2><ul>
-<li>01 前言</li>
-<li>02 开发环境搭建</li>
-<li>03 脚手架创建项目 一切都是组件</li>
-<li>04 基础特性 JSX、Props、State、Lifecycle、Event、Style</li>
-<li>05 组件渲染控制</li>
-<li>06 容器组件、展示组件</li>
-<li>07 前端路由 react-router</li>
-<li>08 状态管理 react-redux</li>
-<li>09 数据请求 fetch</li>
-<li>10 属性类型检查 prop-types</li>
+<p><a href="https://codepen.io/ducafecat/pen/bMxZEy" target="_blank" rel="noopener">https://codepen.io/ducafecat/pen/bMxZEy</a></p>
+<h2 id="2-fetch-配置"><a href="#2-fetch-配置" class="headerlink" title="2 fetch 配置"></a>2 fetch 配置</h2><p>我们来好好的看下这个 <code>fetch()</code> 全局方法</p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-27-14-49-21.png" alt="fetch-init-1"><br><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-27-15-59-13.png" alt="fetch-init-2"></p>
+<p>我举两个自定义例子，大家体会下</p>
+<h3 id="2-1-form-提交"><a href="#2-1-form-提交" class="headerlink" title="2.1 form 提交"></a>2.1 form 提交</h3><h4 id="2-1-1-定义-Headers-请求头协议说明"><a href="#2-1-1-定义-Headers-请求头协议说明" class="headerlink" title="2.1.1 定义 Headers 请求头协议说明"></a>2.1.1 定义 <code>Headers</code> 请求头协议说明</h4><pre><code class="js">let initHeaders = new Headers()
+initHeaders.append(&#39;Accept&#39;, &#39;application/json, text/plain, */*&#39;)
+initHeaders.append(&#39;Cache-Control&#39;, &#39;no-cache&#39;)
+initHeaders.append(&#39;Content-Type&#39;, &#39;application/x-www-form-urlencoded&#39;)
+</code></pre>
+<ul>
+<li>因为是表单，所以设置 <code>application/x-www-form-urlencoded</code></li>
+</ul>
+<h4 id="2-1-2-定义-init-配置"><a href="#2-1-2-定义-init-配置" class="headerlink" title="2.1.2 定义 init 配置"></a>2.1.2 定义 <code>init</code> 配置</h4><pre><code class="js">let data = {uid: 1011}
+let body = `uid=${data.uid}`
+
+const init = {
+  method: &#39;POST&#39;,
+  credentials: &#39;include&#39;, // cookies
+  cache: &#39;no-cache &#39;, // cookies
+  headers: initHeaders,
+  body
+}
+</code></pre>
+<ul>
+<li><code>method</code> 指定 <code>POST</code> 方式</li>
+<li><code>credentials: &#39;include&#39;</code> 表示每次都带上 <code>cookies</code></li>
+<li><code>headers</code> 请求头协议说明</li>
+<li><code>body</code> 数据，格式 <code>key=val&amp;key=val&amp;key=val</code></li>
+</ul>
+<h4 id="2-1-3-请求提交"><a href="#2-1-3-请求提交" class="headerlink" title="2.1.3 请求提交"></a>2.1.3 请求提交</h4><pre><code class="js">fetch(
+  &#39;https://www.easy-mock.com/mock/59801fd8a1d30433d84f198c/example/user/login&#39;,
+  init
+)
+  .then(res =&gt; res.json())
+  .then(data =&gt; {
+    this.setState({user: data})
+  })
+  .catch(e =&gt; console.log(&#39;错误:&#39;, e))
+</code></pre>
+<p>这里就类似我们第一个基础例子了</p>
+<ul>
+<li>codepen</li>
+</ul>
+<p><a href="https://codepen.io/ducafecat/pen/QrVoKW" target="_blank" rel="noopener">https://codepen.io/ducafecat/pen/QrVoKW</a></p>
+<h3 id="2-2-raw-提交"><a href="#2-2-raw-提交" class="headerlink" title="2.2 raw 提交"></a>2.2 raw 提交</h3><h4 id="2-2-1-定义-Headers"><a href="#2-2-1-定义-Headers" class="headerlink" title="2.2.1 定义 Headers"></a>2.2.1 定义 <code>Headers</code></h4><pre><code class="js">let initHeaders = new Headers()
+initHeaders.append(&#39;Accept&#39;, &#39;application/json, text/plain, */*&#39;)
+initHeaders.append(&#39;Cache-Control&#39;, &#39;no-cache&#39;)
+initHeaders.append(&#39;Content-Type&#39;, &#39;application/json;charset=UTF-8&#39;)
+</code></pre>
+<ul>
+<li><code>Content-Type</code> 类型需要定义成 <code>application/json;charset=UTF-8</code></li>
+</ul>
+<h4 id="2-2-2-定义-init"><a href="#2-2-2-定义-init" class="headerlink" title="2.2.2 定义 init"></a>2.2.2 定义 <code>init</code></h4><pre><code class="js">let data = {uid: 1011}
+let body = JSON.stringify(data, null, 2)
+
+const init = {
+  method: &#39;POST&#39;,
+  credentials: &#39;include&#39;, // cookies
+  cache: &#39;no-cache &#39;, // cookies
+  headers: initHeaders,
+  body
+}
+</code></pre>
+<ul>
+<li><code>json</code> 数据需要格式化 <code>JSON.stringify(data, null, 2)</code></li>
+</ul>
+<h4 id="2-2-3-请求提交"><a href="#2-2-3-请求提交" class="headerlink" title="2.2.3 请求提交"></a>2.2.3 请求提交</h4><pre><code class="js">fetch(
+  &#39;https://www.easy-mock.com/mock/59801fd8a1d30433d84f198c/example/user/login&#39;,
+  init
+)
+  .then(res =&gt; res.json())
+  .then(data =&gt; {
+    this.setState({user: data})
+  })
+  .catch(e =&gt; console.log(&#39;错误:&#39;, e))
+</code></pre>
+<ul>
+<li>codepen</li>
+</ul>
+<p><a href="https://codepen.io/ducafecat/pen/gzdELZ" target="_blank" rel="noopener">https://codepen.io/ducafecat/pen/gzdELZ</a></p>
+<h3 id="2-3-完整例子"><a href="#2-3-完整例子" class="headerlink" title="2.3 完整例子"></a>2.3 完整例子</h3><p>代码</p>
+<pre><code class="js">import React, {Component} from &#39;react&#39;
+
+class RequestView extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {user: null}
+    this.handlePostForm = this.handlePostForm.bind(this)
+    this.handlePostJSON = this.handlePostJSON.bind(this)
+  }
+  handlePostForm() {
+    let initHeaders = new Headers()
+    initHeaders.append(&#39;Accept&#39;, &#39;application/json, text/plain, */*&#39;)
+    initHeaders.append(&#39;Cache-Control&#39;, &#39;no-cache&#39;)
+    initHeaders.append(&#39;Content-Type&#39;, &#39;application/x-www-form-urlencoded&#39;)
+
+    let data = {uid: 1011}
+    let body = `uid=${data.uid}`
+
+    const init = {
+      method: &#39;POST&#39;,
+      credentials: &#39;include&#39;, // cookies
+      cache: &#39;no-cache &#39;, // cookies
+      headers: initHeaders,
+      body
+    }
+    fetch(
+      &#39;https://www.easy-mock.com/mock/59801fd8a1d30433d84f198c/example/user/login&#39;,
+      init
+    )
+      .then(res =&gt; res.json())
+      .then(data =&gt; {
+        this.setState({user: data})
+      })
+      .catch(e =&gt; console.log(&#39;错误:&#39;, e))
+  }
+  handlePostJSON() {
+    let initHeaders = new Headers()
+    initHeaders.append(&#39;Accept&#39;, &#39;application/json, text/plain, */*&#39;)
+    initHeaders.append(&#39;Cache-Control&#39;, &#39;no-cache&#39;)
+    initHeaders.append(&#39;Content-Type&#39;, &#39;application/json;charset=UTF-8&#39;)
+
+    let data = {uid: 1011}
+    let body = JSON.stringify(data, null, 2)
+
+    const init = {
+      method: &#39;POST&#39;,
+      credentials: &#39;include&#39;, // cookies
+      cache: &#39;no-cache &#39;, // cookies
+      headers: initHeaders,
+      body
+    }
+    fetch(
+      &#39;https://www.easy-mock.com/mock/59801fd8a1d30433d84f198c/example/user/login&#39;,
+      init
+    )
+      .then(res =&gt; res.json())
+      .then(data =&gt; {
+        this.setState({user: data})
+      })
+      .catch(e =&gt; console.log(&#39;错误:&#39;, e))
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;input
+          type=&quot;button&quot;
+          value=&quot;点击 http-post form 表单&quot;
+          onClickCapture={this.handlePostForm}
+        /&gt;
+        &lt;br /&gt;
+        &lt;input
+          type=&quot;button&quot;
+          value=&quot;点击 http-post json raw 格式&quot;
+          onClickCapture={this.handlePostJSON}
+        /&gt;
+        {this.state.user &amp;&amp; (
+          &lt;ul&gt;
+            &lt;li&gt;ID: {this.state.user.id}&lt;/li&gt;
+            &lt;li&gt;Name: {this.state.user.name}&lt;/li&gt;
+          &lt;/ul&gt;
+        )}
+      &lt;/div&gt;
+    )
+  }
+}
+
+export default RequestView
+
+</code></pre>
+<p>动图效果</p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/react-fetch2.gif" alt="fetch-form-raw"></p>
+<h2 id="3-fetch-同步-async-wait"><a href="#3-fetch-同步-async-wait" class="headerlink" title="3 fetch 同步 async / wait"></a>3 fetch 同步 <code>async / wait</code></h2><h3 id="3-1-同步写法"><a href="#3-1-同步写法" class="headerlink" title="3.1 同步写法"></a>3.1 同步写法</h3><pre><code class="js">async handleClick() {
+  try {
+    const res = await fetch(
+      &#39;https://www.easy-mock.com/mock/59801fd8a1d30433d84f198c/example/user/all&#39;
+    )
+    const users = await res.json()
+    this.setState({users})
+  } catch (error) {
+    console.log(&#39;错误&#39;, error)
+  }
+}
+</code></pre>
+<ul>
+<li>函数本身要定义成 <code>async</code></li>
+<li><code>res.json()</code> 这个方法不要忘记调用</li>
+<li>异常处理要用 <code>try ... catch ...</code></li>
+</ul>
+<h3 id="3-2-完成例子"><a href="#3-2-完成例子" class="headerlink" title="3.2 完成例子"></a>3.2 完成例子</h3><p>代码</p>
+<pre><code class="js">import React, {Component} from &#39;react&#39;
+
+class RequestView extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {users: []}
+    this.handleClick = this.handleClick.bind(this)
+  }
+  async handleClick() {
+    try {
+      const res = await fetch(
+        &#39;https://www.easy-mock.com/mock/59801fd8a1d30433d84f198c/example/user/all&#39;
+      )
+      const users = await res.json()
+      this.setState({users})
+    } catch (error) {
+      console.log(&#39;错误&#39;, error)
+    }
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;input
+          type=&quot;button&quot;
+          value=&quot;点击 async / await 方式获取数据&quot;
+          onClickCapture={this.handleClick}
+        /&gt;
+        &lt;ul&gt;
+          {this.state.users &amp;&amp;
+            this.state.users.map((item, index) =&gt; (
+              &lt;li key={index.toString()}&gt;{item.name}&lt;/li&gt;
+            ))}
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+export default RequestView
+
+</code></pre>
+<p>打印</p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-27-15-05-00.png" alt="fetch-await"></p>
+<h2 id="4-fetch-兼容性"><a href="#4-fetch-兼容性" class="headerlink" title="4 fetch 兼容性"></a>4 fetch 兼容性</h2><p>好像 <code>fetch</code> 很强啊，不用安装包，全局方法直接用，但是有一个小问题，对浏览器的依赖，先看下 <a href="https://caniuse.com/" target="_blank" rel="noopener">caniuse</a> 平台的报告:</p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-27-15-10-25.png" alt="caniuse-fetch"></p>
+<p><code>IE</code> 全阵亡，低版本 <code>Safari</code> 兼容问题，<code>Firefox</code> <code>Chrome</code> <code>Opera</code> 如果特性不开的话也会出问题，懂的同学说可以浏览器配置和打 <code>polyfill</code> 补丁，但是这样需要自己做很多工作，如果你的代码需要跑到 <code>node</code> 端呢（因为<code>API 业务层</code>很有可能复用性很高）。</p>
+<p>如果考虑兼容性，所以我们还是用第三方组件</p>
+<h2 id="5-cross-fetch-组件"><a href="#5-cross-fetch-组件" class="headerlink" title="5 cross-fetch 组件"></a>5 cross-fetch 组件</h2><h3 id="5-1-介绍"><a href="#5-1-介绍" class="headerlink" title="5.1 介绍"></a>5.1 介绍</h3><p><a href="https://github.com/lquixada/cross-fetch" target="_blank" rel="noopener">cross-fetch</a></p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-27-15-29-07.png" alt="cross-fetch"></p>
+<p>感觉 <code>Star</code> 不是很多么。。。</p>
+<p>接着往下看</p>
+<h3 id="5-2-多平台支持"><a href="#5-2-多平台支持" class="headerlink" title="5.2 多平台支持"></a>5.2 多平台支持</h3><p>README 里说了各种平台支持、知名项目也在用</p>
+<p>是真的么。。。</p>
+<p>接着往下看</p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-27-15-32-22.png" alt="Supported environments"></p>
+<h3 id="5-3-包研究"><a href="#5-3-包研究" class="headerlink" title="5.3 包研究"></a>5.3 包研究</h3><p>打开文件 <code>package.json</code></p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-27-15-43-12.png" alt="dependencies"></p>
+<p>来看下这两个包</p>
+<ul>
+<li>node-fetch</li>
+</ul>
+<p><a href="https://github.com/bitinn/node-fetch" target="_blank" rel="noopener">https://github.com/bitinn/node-fetch</a></p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-27-15-44-03.png" alt="node-fetch"></p>
+<ul>
+<li>whatwg-fetch</li>
+</ul>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-27-16-08-31.png" alt="ducafecat_2018-05-27-16-08-31"></p>
+<p>指向了 <a href="https://github.com/github/fetch" target="_blank" rel="noopener">github/fetch</a></p>
+<ul>
+<li>github/fetch</li>
+</ul>
+<p><a href="https://github.com/github/fetch" target="_blank" rel="noopener">https://github.com/github/fetch</a></p>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-27-15-44-37.png" alt="github-fetch"></p>
+<p>好多 Star 看着就放心，大家用吧</p>
+<h3 id="5-4-例子"><a href="#5-4-例子" class="headerlink" title="5.4 例子"></a>5.4 例子</h3><ul>
+<li>安装</li>
+</ul>
+<pre><code class="bash">yarn add cross-fetch
+</code></pre>
+<ul>
+<li>代码</li>
+</ul>
+<pre><code class="js">import React, {Component} from &#39;react&#39;
+import fetch from &#39;cross-fetch&#39;
+
+class RequestView extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {users: []}
+    this.handleClick = this.handleClick.bind(this)
+  }
+  async handleClick() {
+    try {
+      const res = await fetch(
+        &#39;https://www.easy-mock.com/mock/59801fd8a1d30433d84f198c/example/user/all&#39;
+      )
+      const users = await res.json()
+      this.setState({users})
+    } catch (error) {
+      console.log(&#39;错误&#39;, error)
+    }
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;input
+          type=&quot;button&quot;
+          value=&quot;点击 cross-fetch 组件方式 获取数据&quot;
+          onClickCapture={this.handleClick}
+        /&gt;
+        &lt;ul&gt;
+          {this.state.users &amp;&amp;
+            this.state.users.map((item, index) =&gt; (
+              &lt;li key={index.toString()}&gt;{item.name}&lt;/li&gt;
+            ))}
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+export default RequestView
+</code></pre>
+<ul>
+<li>打印</li>
+</ul>
+<p><img src="http://oflimcy5e.bkt.clouddn.com/ducafecat_2018-05-27-15-38-30.png" alt="Cross-Fetch"></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li><a href="https://github.com/ducafecat/reactjs-example/blob/master/src/base/7-1-requestFetch.js" target="_blank" rel="noopener">7-1-requestFetch.js</a></li>
+<li><a href="https://github.com/ducafecat/reactjs-example/blob/master/src/base/7-2-requestFetchConfig.js" target="_blank" rel="noopener">7-2-requestFetchConfig.js</a></li>
+<li><a href="https://github.com/ducafecat/reactjs-example/blob/master/src/base/7-3-requestFetchAwait.js" target="_blank" rel="noopener">7-3-requestFetchAwait.js</a></li>
+<li><a href="https://github.com/ducafecat/reactjs-example/blob/master/src/base/7-4-requestCrossFetch.js" target="_blank" rel="noopener">7-4-requestCrossFetch.js</a></li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API" target="_blank" rel="noopener">fetch</a></li>
+<li><a href="https://github.com/axios/axios" target="_blank" rel="noopener">axios</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener">XMLHttpRequest</a></li>
+<li><a href="https://github.com/lquixada/cross-fetch" target="_blank" rel="noopener">cross-fetch</a></li>
+<li><a href="https://caniuse.com/#search=fetch" target="_blank" rel="noopener">兼容性 fetch</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers" target="_blank" rel="noopener">Headers</a></li>
+<li><a href="https://github.com/github/fetch" target="_blank" rel="noopener">polyfill-fetch</a></li>
+<li><a href="https://github.com/bitinn/node-fetch" target="_blank" rel="noopener">node-fetch</a></li>
 </ul>
 <hr>
-<p>© 会煮咖啡的猫咪<br>微信 ducafecat<br><a href="ducafecat.github.io">镜像</a> <a href="https://github.com/ducafecat" target="_blank" rel="noopener">Git</a></p>
+<p>© 会煮咖啡的猫咪<br>微信 ducafecat<br><a href="ducafecat.github.io">镜像</a> <a href="https://github.com/ducafecat" target="_blank" rel="noopener">Github</a></p>
 
         
     
@@ -538,21 +944,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/05/16/02-react-fast-environment-config/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/05/07/09-graphql-apollo-client-vue/" id="post_nav-older" class="next-content">
+        <a href="/2018/05/25/08-react-fast-redux/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
